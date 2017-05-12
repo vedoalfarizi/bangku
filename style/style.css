@@ -13,6 +13,32 @@
     border-radius: 4px;
 }
 
+.btn{
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.bt-flat{
+    color: #fff;
+    background-color: #63c9f0;
+    text-shadow: -1px 1px #63c9f0;
+    border: none;
+}
+
+.bt-flat:hover{
+    background-color: #94d4ed;
+    text-shadow: -1px 1px #94d4ed;
+}
+
+.bt-flat:active{
+    background-color: #27496d;
+    text-shadow: -1px 1px #193047;
+}
+
 .bt-birusoft{
     color:#fff;
     background-color:#5bc0de;
@@ -322,21 +348,23 @@ th {
 
 /*-------------------------------------------- tab-------------------------------------------- */
 .tab-gaya{
-    position: fixed;
+
 }
 #a1{
     position: fixed;
     width: 70%;
     height: 500px;
-    background-color: red;
-    margin: 200px;
+    background-color: white;
+    border-color: #63c9f0;
+    border-top-width: 20px;
+    /*margin: 200px;*/
 }
 #a2{
     position: fixed;
     width: 100%;
     height: 500px;
     background-color: blue;
-    margin: 200px;
+    /*margin: 200px;*/
     display: none;
 }
 #a3{
@@ -344,7 +372,7 @@ th {
     width: 100%;
     height: 500px;
     background-color: green;
-    margin: 200px;
+    /*margin: 200px;*/
     display: none;
 }
 
