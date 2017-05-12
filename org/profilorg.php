@@ -19,7 +19,7 @@ include "../fungsi/koneksi.php";
         <li><a href="../index.php">Logout</a></li>
     </ul>
 </nav>
-<div class="kotak"></div>
+
 <!-- ------------------------------------------ profil -------------------------------------------------------------------------- -->
 <?php
     $id = $_SESSION['id'];
