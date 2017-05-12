@@ -30,6 +30,10 @@ function satu() {
     a1.style.display = 'block';
     b1.style.display = 'none';
     c1.style.display = 'none';
+
+    var bt1 = document.getElementById('b1');
+    bt1.style.backgroundColor = 'white';
+    bt1.style.color = '#63c9f0';
 }
 function dua() {
     var a2 = document.getElementById('a1');
