@@ -8,15 +8,14 @@ $_SESSION['pesan'];
     <link rel="stylesheet" type="text/css" href="style/style.css">
 </head>
 <body>
-
-
-        <div class="model-form register">
-            <h1>REGISTER</h1>
+        <div class="model-form" style="margin-left: 30%">
+            <h1 class="model-h1">REGISTER</h1>
             <form action="fungsi/proses.php" method="post">
                 <div class="kotak">
-                    <div class="alert"><?php if($_SESSION['pesan']!=""){
-                            echo $_SESSION['pesan'];
-                        }?></div>
+                   <?php if($_SESSION['pesan']!=""){
+                       echo " <div class='alert'>".
+                             $_SESSION['pesan']."</div>";
+                        }?>
                     <div class="nomor">
                         <span>1</span>Username
                         <input type="text" name="username">
@@ -34,7 +33,7 @@ $_SESSION['pesan'];
                         <textarea name="alamat"></textarea>
                     </div>
                     <div class="nomor">
-                        <span>5</span>Provinsi
+                        <span>5</span>Provinsi & Kota
                         <select id="provinsi" name="provinsi" onchange="ChangeListKota()">
                             <option value="">--PILIH--</option>
                             <?php
@@ -44,6 +43,7 @@ $_SESSION['pesan'];
                                     echo "<option value='".$hasil['id_prov']."'>".$hasil['nama_prov']."</option>";
                                 }
                             ?>
+
                         </select>Kota
                         <select id="kota" name="kota">
 
@@ -57,10 +57,11 @@ $_SESSION['pesan'];
                     </div>
                 </div>
 
-                <input type="submit" name="register" value="Register"/>
+            <button type="submit" name="register" value="Register" class="bt bt-birusoft">Register </button>
 
             </form>
-            Sudah punya akun? Login<a href="index.php">disini</a>
+            <br>
+            <label>Sudah punya akun?  <a href="index.php" class="link"> Login</a></label>
         </div>
 
 </body>

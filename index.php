@@ -12,7 +12,7 @@
 
     <div>
         <div id="img-login"><h1 class="model-h1">BANGKU <label>Sumbang Buku</label> </h1>
-        <img src="img/logo.png" style="width: 40%; height: 70%;position: fixed; margin-left: 5%"> </div>
+        <img src="img/Logo.png" style="width: 40%; height: 70%;position: fixed; margin-left: 5%"> </div>
 
         <div class="login">
          <div class="kotak model-form" >
@@ -23,10 +23,9 @@
             <div align="center">
             <img style="width: 30%; height: 30%;" src="img/Default%20User.png">
             </div>
-            <div class="alert"><?php if($_SESSION['pesan']!=""){
-                    echo $_SESSION['pesan'];
-                }?>
-            </div>
+            <?php if($_SESSION['pesan']!=""){
+                echo "<div class='alert'>".$_SESSION['pesan']."</div>";
+            }?>
             <input type="text" name="username" placeholder="Username">
 
             <input type="password" name="password" placeholder="Password">
