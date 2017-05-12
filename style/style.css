@@ -98,6 +98,15 @@
     font-size: 12px;
     line-height: 1.428571429;
 }
+.model-form .imga {
+    width: 200px;
+    height: 200px;
+    padding: 6px 0;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.428571429;
+}
 .model-form .kotak{
     padding: 30px;
     background: #f4f4f4;
@@ -391,7 +400,7 @@ th {
 /*--------------- ----------------------------------IMG --------------------------------------------------------------------------------*/
 
 .img-bulat {
-    width: 100px;
+    width: 400px;
     height: 100px;
     padding: 6px 0;
     border-radius: 50%;
@@ -410,15 +419,7 @@ th {
     line-height: 1.428571429;
 }
 
-.model-form table>tr>td>img{
-    width: 100px;
-    height: 100px;
-    padding: 6px 0;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 12px;
-    line-height: 1.428571429;
-}
+
 
 ::-webkit-file-upload-button {
     background: #63c9f0;;
