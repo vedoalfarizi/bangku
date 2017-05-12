@@ -18,7 +18,7 @@
         <span class="close">&times;</span>
     </div>
     <div class="modal-body">
-        <form action="../fungsi/proses.php">
+        <form action="../fungsi/proses.php" method="post">
             <table>
                 <tr>
                     <td>masukkan nomor hp</td>
@@ -29,7 +29,7 @@
                     <td><input type="date" name="tgl_jemput"></td>
                 </tr>
                 <tr>
-                    <td><input type="submit" name="kirimAmbil"></td>
+                    <td colspan="2" align="center"><input type="submit" name="kirimAmbil"></td>
                 </tr>
             </table>
         </form>
