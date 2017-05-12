@@ -142,4 +142,18 @@ if(isset($_POST['verifikasi_ktp'])){
     }
 }
 
+if(isset($_POST["updatebio"])){
+
+    echo "masuk";
+    $namaa = $_POST["nama"];
+    $email = $_POST["email"];
+    $nohp = $_POST["no_hp"];
+    $almt = $_POST["alamat"];
+
+    $ilah = $_SESSION["id"];
+
+    $kon->query("update user set nama = '$namaa', email = '$email', no_hp = '$nohp', alamat = '$almt' where id_user = '$ilah'");
+
+}
+
 ?>
