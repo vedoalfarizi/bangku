@@ -1,6 +1,11 @@
 <?php
     session_start();
-    $_SESSION['pesan'];
+    if($_SESSION['pesan']==null){
+        echo "";    }
+    else{
+    echo $_SESSION['pesan'];
+    }
+
     if(isset($_SESSION['id'])){
         if($_SESSION['jenis']==1){
             header('location:umum/beranda_umum.php');
