@@ -139,7 +139,7 @@
                     $query= mysqli_query($kon, $sql);
                     while ($row = mysqli_fetch_assoc($query)) {
                     ?>
-                    <tr><a id="popup" href="blablabala"> <b><?php echo $row['nama'] ?></b></a></tr>
+                    <tr><a id="ambilbtn" style="color: rgb(0, 0, 238); cursor: pointer; text-decoration: underline;" > <b><?php echo $row['nama'] ?></b></a></tr>
                 </td> <br>
                 <tr><?php echo $row['alamat'] ?> </tr>  <br>
                 <tr><?php echo $row['no_hp'] ?> </tr>   <br>
@@ -154,7 +154,6 @@
         <div id="map" style="height: 300px; width:400px; float: right;"></div>
     <!-- akhir fitur cari sementara disini-->
     <!--Awal Form Ambil-->
-    <button id="ambilbtn">ambil</button>
     <div class="modal" id="modal1">
         <div class="modal-content">
             <div class="modal-header">
