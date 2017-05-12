@@ -86,6 +86,30 @@ if(isset($_POST['register'])){
     }
 }
 
+//tambahkegiatan
+if(isset($_POST['tambahkegiatan'])){
+    $nkeg   = $_POST['nkeg'];
+    $alamat = $_POST['alamat'];
+    $desk   = $_POST['desk'];
+    $kat    = $_POST['kat'];
+    $tkeg   = $_POST['tkeg'];
+    $uid    = $_SESSION['id'];
+
+    if(count($kat) > 1){
+        $kat = implode(",", $kat);
+    }else{
+        $kat = $kat[0];
+    }
+
+    if($nkeg!="" && $desk!="" && $kat!="" && $tkeg!="" && $alamat!=""){
+        $tambah = $kon->query("INSERT INTO kegiatan(`nama_kegiatan`, `deskripsi`, `kategori`, `tanggal`, `user_id`, `alamat`) VALUES ('$nkeg','$desk','$kat','$tkeg','$uid','$alamat')");
+        $_SESSION['pesan'] = "Kegiatan berhasil ditambahkan";
+        header('location:../org/beranda.php');
+    }else{
+        $_SESSION['pesan'] = "Maaf, mohon lengkapi data anda";
+        header('location:../org/beranda.php');
+    }
+}
 if(isset($_POST['verifikasi_ktp'])){
 
     $target_dir = "../img/ktp/";
@@ -116,4 +140,5 @@ if(isset($_POST['verifikasi_ktp'])){
         }
     }
 }
+
 ?>
