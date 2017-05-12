@@ -14,9 +14,25 @@
 <button id="ambilbtn">ambil</button>
 <div class="modal" id="modal1">
 <div class="modal-content">
-    <span class="close">&times;</span>
+    <div class="modal-header">
+        <span class="close">&times;</span>
+    </div>
     <div class="modal-body">
-
+        <form action="../fungsi/proses.php">
+            <table>
+                <tr>
+                    <td>masukkan nomor hp</td>
+                    <td><input type="text" name="no_hp"></td>
+                </tr>
+                <tr>
+                    <td>masukkan nomor hp</td>
+                    <td><input type="date" name="tgl_jemput"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" name="kirimAmbil"></td>
+                </tr>
+            </table>
+        </form>
     </div>
 </div>
 
