@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,11 +13,14 @@
 <div class="login-kiri">
     <div class="kotak model-form">
 
-        <form class="login-form" action="" method="post" onsubmit="validasi()">
+        <form class="login-form" action="fungsi/proses.php" method="post" onsubmit="validasi()">
 
             <h1> Login </h1>
             <img class="img-bulat" src="img/coba.jpeg">
             <br>
+            <div class="alert"><?php if($_SESSION['pesan']!=""){
+                    echo $_SESSION['pesan'];
+                }?></div>
             <input type="text" name="username" placeholder="Username">
 
             <input type="password" name="password" placeholder="Password">
@@ -26,10 +32,15 @@
 
 </body>
 
-<script type="text/javascript">
-    var validasi= function () {
-        alert ('yes ')
-    }
-
-</script>
+<!--untuk validasi form login-->
+<!--<script type="text/javascript">-->
+<!--    var validasi= function () {-->
+<!--        alert ('yes ')-->
+<!--    }-->
+<!---->
+<!--</script>-->
 </html>
+
+<?php
+$_SESSION['pesan']="";
+?>
