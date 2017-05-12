@@ -114,15 +114,15 @@ function tiga() {
 }
 
 function empat() {
-    var a3 = document.getElementById('a1');
-    var b3 = document.getElementById('a2');
-    var c3 = document.getElementById('a3');
-    var d3 = document.getElementById('a4');
+    var a4 = document.getElementById('a1');
+    var b4 = document.getElementById('a2');
+    var c4 = document.getElementById('a3');
+    var d4 = document.getElementById('a4');
 
-    a3.style.display = 'none';
-    b3.style.display = 'none';
-    c3.style.display = 'none';
-    d3.style.display = 'block';
+    a4.style.display = 'none';
+    b4.style.display = 'none';
+    c4.style.display = 'none';
+    d4.style.display = 'block';
 
     var bt13 = document.getElementById('b4');
     bt13.style.backgroundColor = '#63c9f0';
