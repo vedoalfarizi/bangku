@@ -139,13 +139,16 @@ $id = $_SESSION['id'];
             <table>
                 <td>
                     <?php
-                        $sql= "select * from user where jenis_user=2";
+                        $sql= "select nama, alamat, no_hp from user where jenis_user=1";
                         $query= mysqli_query($kon, $sql);
                         while ($row = mysqli_fetch_assoc($query)) {
                     ?>
-                    <tr><a id="ambilbtn" style="color: rgb(0,0, 238); text-decoration: underline; cursor: pointer"> <b><?php echo $row['nama'] ?></b></a></tr> </td> <br>
-                <tr><?php echo $row['alamat'] ?> </tr>  <br>
-                <tr><?php echo $row['no_hp'] ?> </tr>   <br>
+                    <tr id="sasala">
+                        <a class="ambilbtn" style="color: rgb(0,0, 238); text-decoration: underline; cursor: pointer"> <b><?php echo $row['nama'] ?></b></a>
+                    </tr>
+                    </td><br>
+                    <tr><?php echo $row['alamat'] ?> </tr>  <br>
+                    <tr><?php echo $row['no_hp'] ?> </tr>   <br>
                 <?php
                 }
                 ?>
@@ -170,6 +173,9 @@ $id = $_SESSION['id'];
                 <form action="../fungsi/proses.php" >
 
                     <table>
+                        <?php
+                            $nohp = $kon->query("SELECT ")
+                        ?>
                         <tr><h1>Masukan tanggal pengambilan buku</h1></tr>
                         <tr>
                             <td>No Hp</td>
