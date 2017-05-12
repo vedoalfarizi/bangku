@@ -9,7 +9,7 @@
     font-weight: 400;
     text-align: center;
     cursor: pointer;
-    border: 1px solid transparent;
+    border: 3px;
     border-radius: 4px;
 }
 
@@ -43,11 +43,16 @@
     /*text-shadow: -1px 1px #193047;*/
 }
 
-               .bt-birusoft{
-                   color:#fff;
-                   background-color:#63c9f0;
-                   border-color:#63c9f0;
-               }
+
+.bt-birusoft{
+    width: 30%;
+    color: #63c9f0;
+    background-color:transparent;
+    border: 3px solid #d9d9d9;
+    border-radius: 3rem;
+    padding: 3%;
+}
+
 .bt-birusoft.focus
 {
     color:#fff;
@@ -61,7 +66,7 @@
 }
 .bt-hijau{
     color:#fff;
-    background-color:#c3d445;
+    background-color:transparent;
     border-color:#c3d445;
 }
 .bt-hujau.focus
@@ -77,6 +82,31 @@
 }
 
 /*--------------------------- F O R M ----------------------------------------------------------------------*/
+
+.model-h1{
+    background: #b6f06f;
+
+    padding: 30px 0px 0px 30px;
+    margin: -30px -30px 30px -30px;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+
+    font: normal 40px 'Cambria', serif;
+    border: 1px solid #d9d9d9;
+    border-bottom: 10px solid #d9d9d9;
+}
+.model-h1:hover{
+    background: #b6f06f;
+
+
+}
+.model-h1 label{
+    font-style: italic;
+    font-size: 55%;
+    margin-top: 5%;
+
+}
 .model-form{
     width:40%;
     padding: 5%;
@@ -95,7 +125,7 @@
     color: #fff;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
     font: normal 30px 'Cambria', serif;
-    border: 1px solid #257C9E;
+    border: 1px solid #d9d9d9;
 }
 .model-form .imgprofil{
     width: 100%;
@@ -125,7 +155,7 @@
     width: 200px;
     height: 200px;
     padding: 6px 0;
-    border-radius: 50%;
+    border-radius: 3rem;
     text-align: center;
     font-size: 12px;
     line-height: 1.428571429;
@@ -141,11 +171,11 @@
     background: #63c9f0;
     padding: 20px 30px 15px 30px;
     margin: -30px -30px 30px -30px;
-    border-radius: 10px 10px 0 0;
+    border-radius: 3rem;
     color: #fff;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
     font: normal 30px 'Cambria', serif;
-    border: 1px solid #257C9E;
+    border: 3px solid #FFFFFF;
 }
 .model-form label{
     display: block;
@@ -162,13 +192,18 @@
 .model-form select {
     display: block;
 
-    width: 100%;
-    padding: 8px;
+    width: 90%;
+    padding: 10px;
     border-radius: 6px;
     border: 2px solid #fff;
     box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
 
 }
+
+.model-form input[type="checkbox"]{
+    width: 50%;
+}
+
 
 .model-form .nomor{
     font: normal 20px 'Bitter', serif;
@@ -227,10 +262,17 @@
 }
 
 .login-kiri {
-    padding: 80px 10px 10px 10px;
+    margin: 0% 0% 0% 0%;
     position: fixed;
     right: -25%;
-    width: 60%;
+}
+
+.login{
+    width: 30%;
+
+    position: fixed;
+    float: right;
+    margin-left: 50%;
 
 }
 
@@ -442,6 +484,11 @@ th {
     line-height: 1.428571429;
 }
 
+.imga-bulat-login {
+    width: 500px;
+
+}
+
 .img-petak {
     width: 100px;
     height: 100px;
@@ -462,8 +509,7 @@ nav {
     text-align: center;
     background: #030402;
     border: 3px #FFFFFF;
-    top: 0%;
-    left: 0%;
+
     position: relative;
 }
 .menu{
@@ -484,11 +530,7 @@ nav ul li {
     float: left;
 
 }
-nav ul :hover {
-    border: 3px #FFFFFF;
-    border-radius: 3px;
 
-}
 nav ul li:hover {
 
     color: #FFFFFF;
@@ -501,7 +543,7 @@ nav ul li a {
 }
 nav ul li:hover a {
     color: #FFFFFF;
-    border-bottom-color: #FFFFFF;
+    border-bottom: #FFFFFF;
 }
 
 nav img{
