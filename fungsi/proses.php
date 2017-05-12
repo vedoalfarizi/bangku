@@ -113,11 +113,11 @@ if(isset($_POST['tambahkegiatan'])){
     }
 }
 
-if(isset($_POST['verifikasi_ktp'])){
+if(isset($_POST['updatefotoumum'])){
 
-    $target_dir = "../img/ktp/";
+    $target_dir = "../img/fprofil/";
     $idlah = $_SESSION["id"];
-    $target_file = $target_dir.basename($_FILES["ktp"]["name"]);
+    $target_file = $target_dir.basename($_FILES["fprofil"]["name"]);
 //    $isi = mysqli_query($kon, "update user set foto_ktp = ")
     $ps = $kon->prepare("update user set foto_ktp = ? where id_user = ?");
     $ps->bind_param("si",$target_file, $idlah);
@@ -128,16 +128,18 @@ if(isset($_POST['verifikasi_ktp'])){
         echo "<script>alert('file sudah ada')</script>";
         $uploadOk = 0;
     }
-    if ($_FILES["ktp"]["size"] > 5000000 ) {
+    if ($_FILES["fprofil"]["size"] > 5000000 ) {
         echo "<script>alert('file terlalu besar')</script>";
         $uploadOk = 0;
     }
 
     if ($uploadOk == 0) {
         echo "<script>alert('gagal mengupload file')</script>";
+        header('location:../umum/profilumum.php');
     } else {
-        if (move_uploaded_file($_FILES["ktp"]["tmp_name"], $target_file)) {
+        if (move_uploaded_file($_FILES["fprofil"]["tmp_name"], $target_file)) {
             echo "<script>alert('berhasil upload file')</script>";
+            header('location:../umum/profilumum.php');
         } else {
             echo "<script>alert('terjadi kesalahan saat meupload')</script>";
         }
@@ -189,6 +191,29 @@ if(isset($_POST['updatebioorg'])){
     }else{
         $_SESSION['pesan'] = "Maaf, tidak boleh ada data yang kosong";
         header('location:../org/profilorg.php');
+    }
+}
+
+if(isset($_POST['updatebioumum'])){
+    $nama   = $_POST['nama'];
+    $email  = $_POST['email'];
+    $no_hp  = $_POST['no_hp'];
+    $alamat = $_POST['alamat'];
+    $uid    = $_SESSION['id'];
+
+    if($nama!="" && $email!="" && $no_hp!="" && $alamat!=""){
+        $ubio = $kon->query("UPDATE user SET nama='$nama', email='$email', no_hp='$no_hp', alamat='$alamat' WHERE id_user='$uid'");
+        if($ubio){
+          $u_status = $kon->query("UPDATE user SET status_user=1 WHERE id_user='$uid'");
+          $_SESSION['pesan'] = "Berhasil mengubah biodata";
+          header('location:../umum/profilumum.php');
+        }else{
+            $_SESSION['pesan'] = "Ada kesalahan pada data";
+            header('location:../umum/profilumum.php');
+        }
+    }else{
+        $_SESSION['pesan'] = "Maaf, tidak boleh ada data yang kosong";
+        header('location:../umum/profilumum.php');
     }
 }
 

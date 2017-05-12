@@ -23,7 +23,7 @@ $cek4 = $cek3->fetch_assoc();
 ?>
 <div>
     <div class="model-form ">
-        <h1 class="model-form profil" >TANAH OMBAK</h1>
+        <h1 class="model-form profil" > <?php echo $cek4["nama"]; ?></h1>
         <div align="center">
             <img src="<?php echo $cek2['foto_ktp'] ?>" class="imga img-bulat ">
         </div>
@@ -60,8 +60,8 @@ $cek4 = $cek3->fetch_assoc();
             <form action="../fungsi/proses.php" method="post" enctype="multipart/form-data">
                 <h2>Ganti Foto</h2>
 
-                <input type="file" name="ktp" accept="image/*" >Upload Foto </input>
-                <input type="submit" name="verifikasi_ktp" class="bt bt-birusoft" >Ubah </input>
+                <input type="file" name="fprofil" accept="image/*" >Upload Foto </input>
+                <input type="submit" name="updatefotoumum" class="bt bt-birusoft" >Ubah </input>
             </form>
         </div>
     </div>
@@ -73,7 +73,9 @@ $cek4 = $cek3->fetch_assoc();
 
 <div class="model-form">
     <h1 class="model-form profil">Profil</h1>
-    alert
+    <?php if($_SESSION['pesan']!=""){
+        echo "<div class='alert'>".$_SESSION['pesan']."</div>";
+    }?>
 
     <form action="../fungsi/proses.php" method="post">
 
@@ -84,14 +86,14 @@ $cek4 = $cek3->fetch_assoc();
             <label>Email  <input type="email" name="email" value= <?php echo $cek4["email"]; ?> /></label>
             <label> No Hp <input type="text" name="no_hp" value= <?php echo $cek4["no_hp"]; ?> /></label>
             <label>Alamat <textarea name="alamat" ><?php echo $cek4["alamat"]; ?></textarea></label>
-            <input type="submit" name="updatebio" value="Perbarui" />
+            <input type="submit" name="updatebioumum" value="Perbarui" />
         </div>
     </form>
     <div class="nomor"><span>2</span>Ubah Passwords</div>
     <div class="kotak">
         <form action="../fungsi/proses.php" method="post">
             <label>Password Lama <input type="password" name="pass1"  /></label>
-            <label>Password Baru<input type="password" name="pass2" id="dpass" /></label>
+            <label>Password Baru<input type="password" name="pass2" id="dpass" onchange="cpas()" /></label>
             <label>Confirm Password <input type="password" id="cpass" name="passkonfirmasi" onchange="cpas()" /></label>
     </div>
     <input type="submit" name="ganti" value="Ganti Password" />
@@ -104,3 +106,4 @@ $cek4 = $cek3->fetch_assoc();
 </body>
 <script type="text/javascript" src="../js/script.js"></script>
 </html>
+<?php $_SESSION['pesan']="" ?>
