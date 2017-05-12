@@ -31,16 +31,18 @@
 .model-form{
     width:40%;
     padding:30px;
+
     background: #FFF;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
-    left: 0%;
+
+
 }
 
 .model-form .kotak{
     padding: 30px;
     background: #F8F8F8;
-    border-radius: 6px;
+    border-radius: 10px;
     margin-bottom: 15px;
 }
 .model-form h1{
@@ -53,13 +55,77 @@
     font: normal 30px 'Cambria', serif;
     border: 1px solid #257C9E;
 }
-
 .model-form label{
     display: block;
     font: 14px Cambria sans-serif;
     color: #888;
     margin-bottom: 15px;
 }
+
+.model-form input[type="text"],
+.model-form input[type="email"],
+.model-form input[type="password"],
+.model-form textarea,
+.model-form select {
+    display: block;
+
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 2px solid #fff;
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+
+}
+
+.model-form .nomor{
+    font: normal 20px 'Bitter', serif;
+    color: #2A88AD;
+    margin-bottom: 5px;
+    padding-top:20px;
+}
+.model-form .nomor span {
+    background: #2A88AD;
+    padding: 5px 10px 5px 10px;
+    position: absolute;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border: 4px solid #fff;
+    font-size: 14px;
+    margin-left: -45px;
+    color: #fff;
+    margin-top: -3px;
+}
+
+.model-form input[type="submit"]{
+    background: #2A88AD;
+    padding: 8px 20px 8px 20px;
+    border-radius: 5px;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+    font: normal 30px 'Bitter', serif;
+    box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+    border: 1px solid #257C9E;
+    font-size: 15px;
+    margin-left: 25%;
+}
+
+.model-form input[type="button"]:hover,
+.model-form input[type="submit"]:hover{
+    background: #2A6881;
+
+    -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+    -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+    box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+}
+ .register {
+    width: 30%;
+
+     display: block;
+
+ }
+
+
 
 .login-kiri {
     padding: 80px 10px 10px 10px;
@@ -68,10 +134,8 @@
     width: 60%;
 
 }
-
-
-
 .img-bulat {
+    display: block;
     width: 100px;
     height: 100px;
     padding: 6px 0;
@@ -151,3 +215,39 @@
     background-color: #5cb85c;
     color: white;
 }
+
+
+/*--------------------------- T A B E L----------------------------------------------------------------------*/
+
+.tabel {
+
+    min-height: .01%;
+    overflow-x: auto;
+    margin-bottom: 0;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    border-color: black;
+    border : 2px;
+}
+.tabel td, .tabel>tbody>tr>td, .tabel>tbody>tr>th, .tabel>tfoot>tr>td, .tabel>tfoot>tr>th, .tabel>thead>tr>td, .tabel>thead>tr>th {
+    padding: 15px 10px !important;
+    font-size: 20px;
+    color: black;
+    border-top: none !important;
+    border :2px solid #ddd;
+
+}
+
+
+.tabel-garis {
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+}
+
+th {
+    color: #00C6D7!important;
+    font-weight: 400;
+}
+
+/*------------------------ END TABLE --------------------------------------------*/
