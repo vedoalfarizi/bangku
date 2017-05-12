@@ -57,4 +57,29 @@ if(isset($_POST['login'])){
         header('location:../index.php');
     }
 }
+
+//prosesdaftar
+if(isset($_POST['register'])){
+    $uname = $_POST['username'];
+    $email = $_POST['email'];
+    $pass = $_POST['password'];
+    $alamat = $_POST['alamat'];
+    $jenis = $_POST['jenis_user'];
+
+    if($uname!="" && $email!="" && $pass!="" && $alamat!="" && $jenis!=""){
+        $daftar = $kon->prepare("INSERT INTO user(`nama`, `email`, `password`, `alamat`, `jenis_user`) VALUES (?, ?, ?, ?, ?)");
+        $daftar->bind_param("ssssi", $uname, $email, $pass, $alamat, $jenis);
+
+        if($daftar->execute()){
+            $_SESSION['pesan']="Pendaftaran berhasil";
+            header('location:../register.php');
+        }else{
+//            $_SESSION['pesan']="Maaf, ada kesalahan pada data anda";
+//            header('location:../register.php');
+        }
+    }else{
+        $_SESSION['pesan']="Maaf, tidak boleh ada data yang kosong";
+        header('location:../register.php');
+    }
+}
 ?>
