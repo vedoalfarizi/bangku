@@ -19,7 +19,7 @@
     <ul>
         <li><a href="beranda_umum.php">Beranda</a> </li>
         <li><a href="profilumum.php"> Profil </a></li>
-        <li><a href="../index.php">Logout</a></li>
+        <li><a href="../fungsi/logout.php">Logout</a></li>
     </ul>
 </nav>
 </div>

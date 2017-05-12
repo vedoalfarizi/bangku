@@ -16,7 +16,7 @@ include "../fungsi/koneksi.php";
     <ul>
         <li><a href="../org/beranda.php">Beranda</a> </li>
         <li><a href="profilorg.php"> Profil </a></li>
-        <li><a href="../index.php">Logout</a></li>
+        <li><a href="../fungsi/logout.php">Logout</a></li>
     </ul>
 </nav>
 
