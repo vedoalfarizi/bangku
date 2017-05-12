@@ -1,3 +1,13 @@
+<html>
+<head>
+<title>Bangku</title>
+</head>
+<body>
+<div>
+    <button>1</button>
+</div>
+</body>
+</html>
 <?php
 include_once '../fungsi/koneksi.php';
 
