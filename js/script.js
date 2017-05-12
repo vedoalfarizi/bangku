@@ -118,7 +118,6 @@ function empat() {
     b3.style.display = 'none';
     c3.style.display = 'none';
     d3.style.display = 'block';
-    // c3.style.position ='fixed';
 
     var bt13 = document.getElementById('b4');
     bt13.style.backgroundColor = '#63c9f0';
@@ -138,13 +137,4 @@ function empat() {
     bt43.style.borderColor = '#63c9f0';
 }
 
-window.onload() = function () {
-    var aa2 = document.getElementById('a1');
-    var ba2 = document.getElementById('a2');
-    var ca2 = document.getElementById('a3');
-
-    aa2.style.display = 'none';
-    ba2.style.display = 'block';
-    ca2.style.display = 'none';
-}
 //------------------------------------------------------
