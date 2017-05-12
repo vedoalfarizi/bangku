@@ -3,14 +3,6 @@
 
 }
 
-.bt-lk{
-    background-color: transparent;
-
-    font-weight: 400;
-    color: #c5d45a;
-    border-radius: 0;
-}
-
 .bt {
     padding: 6px 12px;
     font-size: 14px;
@@ -50,15 +42,12 @@
     color: #ffffff;
     /*text-shadow: -1px 1px #193047;*/
 }
-.bt-birusoft{
-    width: 30%;
-    color: #63c9f0;
-    background-color:transparent;
-    border: 3px solid #d9d9d9;
-    border-radius: 3rem;
-    padding: 3%;
-}
 
+               .bt-birusoft{
+                   color:#fff;
+                   background-color:#63c9f0;
+                   border-color:#63c9f0;
+               }
 .bt-birusoft.focus
 {
     color:#fff;
@@ -516,7 +505,7 @@ nav ul li {
     float: left;
 
 }
-nav ul:hover {
+nav ul : hover {
     border: 3px #FFFFFF;
     border-radius: 3px;
 
@@ -533,7 +522,7 @@ nav ul li a {
 }
 nav ul li:hover a {
     color: #FFFFFF;
-    border-bottom:#FFFFF;
+    border-bottom: #FFFFFF;
 }
 
 nav img{
