@@ -90,9 +90,9 @@ include "../fungsi/koneksi.php";
             <div class="nomor"><span>2</span>Ubah Passwords</div>
             <div class="kotak">
                 <form action="../fungsi/proses.php" method="post">
-                <label>Password Lama <input type="password" name="pass1" /></label>
-                <label>Password Baru<input type="password" name="pass2" /></label>
-                <label>Confirm Password <input type="password" name="passkonfirmasi" /></label>
+                <label>Password Lama <input type="password" name="pass1" id="dpass" /></label>
+                <label>Password Baru<input type="password" name="pass2" id="cpass" /></label>
+                <label>Confirm Password <input type="password" name="passkonfirmasi" onChange="cpas()" /></label>
             </div>
             <input type="submit" name="ganti" value="Ganti Password" />
             </form>
