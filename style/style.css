@@ -544,7 +544,8 @@ nav {
     text-align: center;
     background: #030402;
     border: 3px #FFFFFF;
-
+    top: 0%;
+    left: 0%;
     position: relative;
 }
 .menu{
