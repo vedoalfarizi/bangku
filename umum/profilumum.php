@@ -1,3 +1,9 @@
+<?php
+session_start();
+$_SESSION["pesan"];
+include "../fungsi/koneksi.php";
+?>
+
 <html xmlns="http://www.w3.org/1999/html">
 <head>
     <title>Profil</title>
@@ -6,12 +12,20 @@
 <body>
 
 <!-- ------------------------------------------ profil -------------------------------------------------------------------------- -->
+    <?php
+    $ddd = $_SESSION['id'];
+    $cek1 = $kon->query("SELECT foto_ktp FROM user where id_user = '$ddd'");
+    $cek2 = $cek1->fetch_assoc();
 
+    $cek3 = $kon->query("select * from user where id_user = '$ddd'");
+    $cek4 = $cek3->fetch_assoc();
+
+    ?>
     <div>
         <div class="model-form ">
             <h1 class="model-form profil" >TANAH OMBAK</h1>
             <div align="center">
-                <img src="../img/profil.jpg" class="imga img-bulat ">
+                <img src="<?php echo $cek2['foto_ktp'] ?>" class="imga img-bulat ">
             </div>
 
             <table>
@@ -20,7 +34,7 @@
                         Nama
                     </td>
                     <td>
-                        : BAPAK BUDI
+                        : <?php echo $cek4["nama"]; ?>
                     </td>
                 </tr>
                 <tr>
@@ -28,7 +42,7 @@
                         Email
                     </td>
                     <td>
-                        :dartikaaniemarian@gmail.com
+                        : <?php echo $cek4["email"]; ?>
                     </td>
                 </tr>
                 <tr>
@@ -36,7 +50,7 @@
                         Alamat :
                 </td>
                 <td>
-                    djsadhsaksjksj
+                    <?php echo $cek4["alamat"]; ?>
                 </td>
 
                 </tr>
@@ -61,25 +75,15 @@
             <h1 class="model-form profil">Profil</h1>
             alert
 
-            <form>
+            <form action="../fungsi/proses.php" method="post">
 
                 <div class="nomor"><span>1</span>Ubah Biodata </div>
                 <div class="kotak">
 
-                    <label>Nama  <input type="text"> </label>
-                    <label>Email  <input type="email" name="email" /></label>
-                    <label> No Hp <input type="text" name="nohp" /></label>
-                    <label>Provinsi
-                        <select>da
-                            <option>da</option>
-                            <option>da</option>
-                            <option>da</option></select></label>
-                    <label>Kota
-                        <select>da
-                            <option>da</option>
-                            <option>da</option>
-                            <option>da</option></select></label>
-                    <label>Alamat <textarea name="alamat"></textarea></label>
+                    <label>Nama  <input type="text" name="nama" value= <?php echo $cek4["nama"]; ?> > </label>
+                    <label>Email  <input type="email" name="email" value= <?php echo $cek4["email"]; ?> /></label>
+                    <label> No Hp <input type="text" name="no_hp" value= <?php echo $cek4["no_hp"]; ?> /></label>
+                    <label>Alamat <textarea name="alamat" ><?php echo $cek4["alamat"]; ?></textarea></label>
                     <input type="submit" name="updatebio" value="Perbarui" />
                 </div>
             </form>
