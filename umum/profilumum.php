@@ -89,7 +89,7 @@ include "../fungsi/koneksi.php";
             </form>
             <div class="nomor"><span>2</span>Ubah Passwords</div>
             <div class="kotak">
-                <form>
+                <form action="../fungsi/proses.php" method="post">
                 <label>Password Lama <input type="password" name="pass1" /></label>
                 <label>Password Baru<input type="password" name="pass2" /></label>
                 <label>Confirm Password <input type="password" name="passkonfirmasi" /></label>
