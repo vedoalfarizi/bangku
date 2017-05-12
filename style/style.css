@@ -1,4 +1,7 @@
 /*--------------------------- B U T T O N ----------------------------------------------------------------------*/
+*{vertical-align: baseline;
+
+}
 
 .bt {
     padding: 6px 12px;
@@ -29,16 +32,41 @@
 
 /*--------------------------- F O R M ----------------------------------------------------------------------*/
 .model-form{
-    width:40%;
+    width:30%;
     padding:30px;
-
     background: #FFF;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
-
-
 }
 
+
+.model-form h1{
+     background: #63c9f0;
+     padding: 20px 30px 15px 30px;
+     margin: -30px -30px 30px -30px;
+     border-radius: 10px 10px 0 0;
+     color: #fff;
+     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+     font: normal 30px 'Cambria', serif;
+     border: 1px solid #257C9E;
+ }
+.model-form .imgprofil{
+    width: 100%;
+    align : center;
+    margin : -27px 0px 0px -27px;
+    border: transparent;
+    border-radius: 4%;
+    height: 200px;
+ }
+.model-form img {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.428571429;
+}
 .model-form .kotak{
     padding: 30px;
     background: #F8F8F8;
@@ -46,7 +74,7 @@
     margin-bottom: 15px;
 }
 .model-form h1{
-    background: #2A88AD;
+    background: #63c9f0;
     padding: 20px 30px 15px 30px;
     margin: -30px -30px 30px -30px;
     border-radius: 10px 10px 0 0;
@@ -65,6 +93,7 @@
 .model-form input[type="text"],
 .model-form input[type="email"],
 .model-form input[type="password"],
+.model-form input[type="date"],
 .model-form textarea,
 .model-form select {
     display: block;
@@ -111,6 +140,7 @@
 }
 
 .model-form input[type="button"]:hover,
+.model-form input[type="date"]:hover,
 .model-form input[type="submit"]:hover{
     background: #2A6881;
 
@@ -125,7 +155,12 @@
 
  }
 
+.model-form model {
+    width: 100%;
 
+    display: block;
+
+}
 
 .login-kiri {
     padding: 80px 10px 10px 10px;
@@ -134,16 +169,21 @@
     width: 60%;
 
 }
-.img-bulat {
-    display: block;
-    width: 100px;
-    height: 100px;
-    padding: 6px 0;
-    border-radius: 50%;
-    font-size: 12px;
-    left: auto;
+
+.model-form .profil{
+    background: #63c9f0;
+    width: 100%;
+
+    border-radius: 10px 10px 0 0;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+    font: normal 30px 'Cambria', serif;
+    border: 1px solid #63c9f0;
 }
 
+.kiri{
+    float: left;
+}
 /*---------------------------------------------------MODAL-----------------------------------------*/
 
 .modal {
@@ -167,13 +207,39 @@
     margin: auto;
     padding: 0;
     border: 1px solid #888;
-    width: 80%;
+    width: 25%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.2s;
     animation-name: animatetop;
-    animation-duration: 0.2s
+    animation-duration: 0.2s;
     font-family : "Century Gothic";
+    background: #FFF;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+}
+
+
+.modal-content h1{
+    background: #2A88AD;
+    padding: 5px 20px 10px 20px;
+    margin: -30px -30px 30px -30px;
+    border-radius: 10px;
+    color: #fff;
+    font: normal 20px 'Cambria', serif;
+    border: 1px solid #257C9E;
+}
+
+
+input
+{
+    display: block;
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 2px solid #fff;
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+
 }
 
 
@@ -189,8 +255,9 @@
 
 
 .close {
-    color: white;
+    color: #ffffff;
     float: right;
+    margin : -30px -25px 0px -10px;
     font-size: 28px;
     font-weight: bold;
 }
@@ -215,6 +282,7 @@
     background-color: #5cb85c;
     color: white;
 }
+
 
 
 /*--------------------------- T A B E L----------------------------------------------------------------------*/
@@ -283,3 +351,38 @@ th {
     border: 1px solid #E7E7E8;
     margin-top: 10px;
 }
+
+
+/*--------------- ----------------------------------IMG --------------------------------------------------------------------------------*/
+
+.img-bulat {
+    width: 100px;
+    height: 100px;
+    padding: 6px 0;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.428571429;
+}
+
+.img-petak {
+    width: 100px;
+    height: 100px;
+    padding: 6px 0;
+
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.428571429;
+}
+
+.model-form table>tr>td>img{
+    width: 100px;
+    height: 100px;
+    padding: 6px 0;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.428571429;
+}
+
+
