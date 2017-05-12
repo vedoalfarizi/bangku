@@ -216,3 +216,39 @@
     background-color: #5cb85c;
     color: white;
 }
+
+
+/*--------------------------- T A B E L----------------------------------------------------------------------*/
+
+.tabel {
+
+    min-height: .01%;
+    overflow-x: auto;
+    margin-bottom: 0;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    border-color: black;
+    border : 2px;
+}
+.tabel td, .tabel>tbody>tr>td, .tabel>tbody>tr>th, .tabel>tfoot>tr>td, .tabel>tfoot>tr>th, .tabel>thead>tr>td, .tabel>thead>tr>th {
+    padding: 15px 10px !important;
+    font-size: 20px;
+    color: black;
+    border-top: none !important;
+    border :2px solid #ddd;
+
+}
+
+
+.tabel-garis {
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+}
+
+th {
+    color: #00C6D7!important;
+    font-weight: 400;
+}
+
+/*------------------------ END TABLE --------------------------------------------*/
