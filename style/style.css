@@ -13,42 +13,16 @@
     border-radius: 4px;
 }
 
-.btn{
-    padding: 6px 12px;
-    font-size: 14px;
-    font-weight: 400;
-    text-align: center;
-    cursor: pointer;
-    border: 1px solid transparent;
-}
-
-.bt-flat{
-    color: #fff;
-    background-color: #63c9f0;
-    text-shadow: -1px 1px #63c9f0;
-    border: none;
-}
-
-.bt-flat:hover{
-    background-color: #94d4ed;
-    text-shadow: -1px 1px #94d4ed;
-}
-
-.bt-flat:active{
-    background-color: #27496d;
-    text-shadow: -1px 1px #193047;
-}
-
 .bt-birusoft{
     color:#fff;
-    background-color:#5bc0de;
-    border-color:#46b8da;
+    background-color:#63c9f0;
+    border-color:#63c9f0;
 }
 .bt-birusoft.focus
 {
     color:#fff;
-    background-color:#286090;
-    border-color:#122b40
+    background-color: #57b6f0;
+    border-color:#63c9f0;
 }
 .bt-birusoft:hover{
     color:#fff;
@@ -58,24 +32,25 @@
 
 /*--------------------------- F O R M ----------------------------------------------------------------------*/
 .model-form{
-    width:30%;
-    padding:30px;
+    width:40%;
+    padding: 5%;
     background: #FFF;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+    float: left;
 }
 
 
 .model-form h1{
-     background: #63c9f0;
-     padding: 20px 30px 15px 30px;
-     margin: -30px -30px 30px -30px;
-     border-radius: 10px 10px 0 0;
-     color: #fff;
-     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
-     font: normal 30px 'Cambria', serif;
-     border: 1px solid #257C9E;
- }
+    background: #63c9f0;
+    padding: 20px 30px 15px 30px;
+    margin: -30px -30px 30px -30px;
+    border-radius: 10px 10px 0 0;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+    font: normal 30px 'Cambria', serif;
+    border: 1px solid #257C9E;
+}
 .model-form .imgprofil{
     width: 100%;
     align : center;
@@ -83,7 +58,7 @@
     border: transparent;
     border-radius: 4%;
     height: 200px;
- }
+}
 .model-form img {
     width: 30px;
     height: 30px;
@@ -95,7 +70,7 @@
 }
 .model-form .kotak{
     padding: 30px;
-    background: #F8F8F8;
+    background: #f4f4f4;
     border-radius: 10px;
     margin-bottom: 15px;
 }
@@ -134,12 +109,12 @@
 
 .model-form .nomor{
     font: normal 20px 'Bitter', serif;
-    color: #2A88AD;
-    margin-bottom: 5px;
-    padding-top:20px;
+    color:  #63c9f0;
+    margin-bottom: 10px;
+
 }
 .model-form .nomor span {
-    background: #2A88AD;
+    background:  #63c9f0;
     padding: 5px 10px 5px 10px;
     position: absolute;
     border-radius: 50%;
@@ -153,33 +128,32 @@
 }
 
 .model-form input[type="submit"]{
-    background: #2A88AD;
+    background: #63c9f0;
     padding: 8px 20px 8px 20px;
     border-radius: 5px;
     color: #fff;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
     font: normal 30px 'Bitter', serif;
     box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
-    border: 1px solid #257C9E;
+    border: 1px solid #63c9f0;
     font-size: 15px;
-    margin-left: 25%;
 }
 
 .model-form input[type="button"]:hover,
 .model-form input[type="date"]:hover,
 .model-form input[type="submit"]:hover{
-    background: #2A6881;
+    background: #ade8f0;
 
     -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
     -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
     box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
 }
- .register {
+.register {
     width: 30%;
 
-     display: block;
+    display: block;
 
- }
+}
 
 .model-form model {
     width: 100%;
@@ -207,9 +181,6 @@
     border: 1px solid #63c9f0;
 }
 
-.kiri{
-    float: left;
-}
 /*---------------------------------------------------MODAL-----------------------------------------*/
 
 .modal {
@@ -348,33 +319,46 @@ th {
 
 /*-------------------------------------------- tab-------------------------------------------- */
 .tab-gaya{
-
+    position: fixed;
 }
 #a1{
     position: fixed;
     width: 70%;
-    height: 500px;
-    background-color: white;
-    border-color: #63c9f0;
-    border-top-width: 20px;
-    position: ;
-    /*margin: 200px;*/
+    height: 50px;
+    background-color: red;
+    z-index: 0;
+    margin: 200px;
+}
+#a2{
+    position: fixed;
+    width: 70%;
+    height: 50px;
+    background-color: blue;
+    z-index: -2;
+    margin: 200px;
+}
+#a3{
+    position: fixed;
+    width: 70%;
+    height: 50px;
+    background-color: green;
+    z-index: -1;
+    margin: 200px;
+
 }
 #a2{
     position: fixed;
     width: 100%;
-    height: 500px;
+    height: 50px;
     background-color: blue;
-    /*margin: 200px;*/
-    display: none;
+    margin: 200px;
 }
 #a3{
     position: fixed;
     width: 100%;
-    height: 500px;
+    height: 50px;
     background-color: green;
-    /*margin: 200px;*/
-    display: none;
+    margin: 200px;
 }
 
 .kotak {
@@ -419,4 +403,8 @@ th {
     line-height: 1.428571429;
 }
 
-
+::-webkit-file-upload-button {
+    background: #63c9f0;;
+    color: #6f6f6f;
+    padding: 1em;
+}
