@@ -1,4 +1,4 @@
-<html xmlns="http://www.w3.org/1999/html">
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
     <title>Profil</title>
     <link rel="stylesheet" type="text/css" href="../style/style.css">
@@ -43,11 +43,11 @@
 
             </table>
             <div class="kotak">
-                <form>
+                <form action="../fungsi/proses.php" method="post" enctype="multipart/form-data">
                     <h2>Ganti Foto</h2>
 
-                    <button type="file" name="ktp" class="bt bt-birusoft"/>Upload Foto </button>
-                    <button type="submit" name="verifikasi_ktp" class="bt bt-birusoft" />Ubah </button>
+                    <input type="file" name="ktp" accept="image/*" >Upload Foto </input>
+                    <input type="submit" name="verifikasi_ktp" class="bt bt-birusoft" >Ubah </input>
                 </form>
             </div>
             </div>
