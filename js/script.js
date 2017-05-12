@@ -83,6 +83,7 @@ function tiga() {
     a3.style.display = 'none';
     b3.style.display = 'none';
     c3.style.display = 'block';
+    c3.style.position ='fixed';
 
     var bt13 = document.getElementById('b3');
     bt13.style.backgroundColor = '#63c9f0';
@@ -101,18 +102,34 @@ function tiga() {
     bt43.style.color = '#63c9f0';
     bt43.style.borderColor = '#63c9f0';
 }
-//------------------------------------------------------
 
-function cekone() {
-    var cpas = document.getElementById('cpass');
-    var dpas = document.getElementById('dpass');
-    // alert("mamamama");
-    if(cpas.value != dpas.value){
-        cpas.style.borderColor = 'red';
-        cpas.style.backgroundColor = '#f0cad1';
-    }else{
-        cpas.style.borderColor = 'green';
-        cpas.style.backgroundColor = '#caf0d6';
-    }
+function empat() {
+    var a3 = document.getElementById('a1');
+    var b3 = document.getElementById('a2');
+    var c3 = document.getElementById('a3');
+    var d3 = document.getElementById('a4');
 
+    a3.style.display = 'none';
+    b3.style.display = 'none';
+    c3.style.display = 'none';
+    c4.style.display = 'block';
+    // c3.style.position ='fixed';
+
+    var bt13 = document.getElementById('b4');
+    bt13.style.backgroundColor = '#63c9f0';
+    bt13.style.color = 'white';
+    bt13.style.borderColor = '#63c9f0';
+    var bt23 = document.getElementById('b2');
+    bt23.style.backgroundColor = 'white';
+    bt23.style.color = '#63c9f0';
+    bt23.style.borderColor = '#63c9f0';
+    var bt33 = document.getElementById('b1');
+    bt33.style.backgroundColor = 'white';
+    bt33.style.color = '#63c9f0';
+    bt33.style.borderColor = '#63c9f0';
+    var bt43 = document.getElementById('b3');
+    bt43.style.backgroundColor = 'white';
+    bt43.style.color = '#63c9f0';
+    bt43.style.borderColor = '#63c9f0';
 }
+//------------------------------------------------------
