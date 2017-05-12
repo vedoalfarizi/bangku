@@ -62,12 +62,23 @@
                             <td>".$hasil['tanggal']."</td>
                             <td>".$hasil['nama']."</td>
                             <td>".$hasil['jumlah']."</td>
-                            <td><a href='detail_sumbangan.php?ids=".$hasil['id_donasi']."'>detail</a></td>
+                            <td><a class=\"ambilbtn\" style=\"color: rgb(0, 0, 238); cursor: pointer; text-decoration: underline;\" >detail</a></td>
                             </tr>";
                             $no++;
                     }
                     echo "</table></div>";
                         ?>
+            <div class="modal" id="modal1">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close">&times;</span>
+                    </div>
+                    <div class="modal-body">
+
+<!--                       isi detail disini-->
+                    </div>
+                </div>
+            </div>
     </div>
 
 <div class="kotak" id="a1" style="margin-top: 0%;">
