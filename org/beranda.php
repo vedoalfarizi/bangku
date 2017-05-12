@@ -6,6 +6,8 @@ $id = $_SESSION['id'];
 ?>
 <html>
 <head>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-1Hz75qNfD5pggoNIV-1u3HubAI-3MN4&callback=initMap"
+            async defer></script>
 <title>Bangku</title>
     <link rel="stylesheet" href="../style/style.css">
 </head>
@@ -131,7 +133,33 @@ $id = $_SESSION['id'];
 
 <div id="a3" class="kotak" style="margin-top: 0%;" >
     <!--Awal Form Ambil-->
-    <button id="ambilbtn">ambil</button>
+    <div>
+        <button onclick="yourLocation()">Your Location</button>
+        <form style="float : left">
+            <table>
+                <td>
+                    <?php
+                        $sql= "select * from user where jenis_user=2";
+                        $query= mysqli_query($kon, $sql);
+                        while ($row = mysqli_fetch_assoc($query)) {
+                    ?>
+                    <tr><a id="ambilbtn" style="color: rgb(0,0, 238); text-decoration: underline; cursor: pointer"> <b><?php echo $row['nama'] ?></b></a></tr> </td> <br>
+                <tr><?php echo $row['alamat'] ?> </tr>  <br>
+                <tr><?php echo $row['no_hp'] ?> </tr>   <br>
+                <?php
+                }
+                ?>
+
+                </td>
+            </table>
+
+
+        </form>
+        <div class="" style="float: left"></div>
+        <div id="map" style="height: 600px; width:800px; float: right;">
+        </div>
+    </div>
+
     <div class="modal" id="modal1">
         <div class="modal-content">
             <div class="modal-header">
@@ -172,13 +200,77 @@ $id = $_SESSION['id'];
 <!--Akhir Menu Navigasi-->
 
 
-
-
-
-
-
 <script type="text/javascript" src="../js/script.js"></script>
 </body>
+<script>
+    var map;
+
+    function initMap(){
+        map= new google.maps.Map(document.getElementById('map'),
+            {
+                center : new google.maps.LatLng(-2.374382,99.5466409),
+                zoom : 9,
+                map : map
+
+            })
+
+        <?php
+            $sql= "select * from user where jenis_user=2";
+            $query= mysqli_query($kon, $sql);
+            while ($row = mysqli_fetch_assoc($query)) {
+        ?>
+        var infoWindow = new google.maps.InfoWindow({
+            content: "<?php echo $row['nama']?>"
+        });
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(
+                <?php echo $row['lat'].",".$row['longt'];?>
+            ),
+
+            map: map,
+            title : '<?php echo $row['nama'] ?>'
+        });
+        marker.setMap(map);
+        google.maps.event.addListener(marker,'click',function() {
+            map.setZoom(9);
+            infoWindow.open(map,marker);
+        });
+        <?php
+        }
+        ?>
+
+        var directionsService = new google.maps.DirectionsService;
+        directionsDisplay = new google.maps.DirectionsRenderer();
+        directionsDisplay.setMap(map);
+    }
+
+    function yourLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var pos = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+                var infoWindow= new google.maps.InfoWindow;
+                infoWindow.setPosition(pos);
+                infoWindow.setContent('Here!!');
+                infoWindow.open(map);
+                map.setCenter(pos);
+            }, function() {
+                handleLocationError(true, infoWindow, map.getCenter());
+            });
+        } else {
+
+            handleLocationError(false, infoWindow, map.getCenter());
+        }
+
+    }
+
+
+
+
+</script>
+
 </html>
 <?php
 $_SESSION['pesan']="";
