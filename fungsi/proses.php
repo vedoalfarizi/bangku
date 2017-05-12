@@ -85,4 +85,35 @@ if(isset($_POST['register'])){
         header('location:../register.php');
     }
 }
+
+if(isset($_POST['verifikasi_ktp'])){
+
+    $target_dir = "../img/ktp/";
+    $idlah = $_SESSION["id"];
+    $target_file = $target_dir.basename($_FILES["ktp"]["name"]);
+//    $isi = mysqli_query($kon, "update user set foto_ktp = ")
+    $ps = $kon->prepare("update user set foto_ktp = ? where id_user = ?");
+    $ps->bind_param("si",$target_file, $idlah);
+    $ps->execute();
+
+    $uploadOk = 1;
+    if (file_exists($target_file)) {
+        echo "<script>alert('file sudah ada')</script>";
+        $uploadOk = 0;
+    }
+    if ($_FILES["ktp"]["size"] > 5000000 ) {
+        echo "<script>alert('file terlalu besar')</script>";
+        $uploadOk = 0;
+    }
+
+    if ($uploadOk == 0) {
+        echo "<script>alert('gagal mengupload file')</script>";
+    } else {
+        if (move_uploaded_file($_FILES["ktp"]["tmp_name"], $target_file)) {
+            echo "<script>alert('berhasil upload file')</script>";
+        } else {
+            echo "<script>alert('terjadi kesalahan saat meupload')</script>";
+        }
+    }
+}
 ?>
