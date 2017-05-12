@@ -9,9 +9,10 @@
 <body>
 <div class="tab-gaya">
     <div class="kotak">
-        <button id="b1" onclick="satu()">Beranda</button>
-        <button id="b2" onclick="dua()">Profil</button>
-        <button id="b3" onclick="tiga()">LogOut</button>
+        <button id="b2" onclick="dua()">sumbangan</button>
+        <button id="b1" onclick="satu()">sumbang buku</button>
+        <button id="b3" onclick="tiga()">cari</button>
+        <button id="b4" onclick="">kegiatan</button>
     </div>
 </div>
 
