@@ -6,6 +6,6 @@
 
     $kon = new mysqli($host, $user, $pass, $db);
     if($kon){
-        echo "Berhasil";
+     //   echo "Berhasil";
     }
 ?>
