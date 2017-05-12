@@ -43,11 +43,16 @@
     /*text-shadow: -1px 1px #193047;*/
 }
 
-               .bt-birusoft{
-                   color:#fff;
-                   background-color:#63c9f0;
-                   border-color:#63c9f0;
-               }
+
+.bt-birusoft{
+    width: 30%;
+    color: #63c9f0;
+    background-color:transparent;
+    border: 3px solid #d9d9d9;
+    border-radius: 3rem;
+    padding: 3%;
+}
+
 .bt-birusoft.focus
 {
     color:#fff;
@@ -79,14 +84,28 @@
 /*--------------------------- F O R M ----------------------------------------------------------------------*/
 
 .model-h1{
-    background: #d9d9d9;
+    background: #b6f06f;
 
-    padding: 35px ;
+    padding: 30px 0px 0px 30px;
     margin: -30px -30px 30px -30px;
     color: #fff;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+
     font: normal 40px 'Cambria', serif;
     border: 1px solid #d9d9d9;
+    border-bottom: 10px solid #d9d9d9;
+}
+.model-h1:hover{
+    background: #b6f06f;
+
+
+}
+.model-h1 label{
+    font-style: italic;
+    font-size: 55%;
+    margin-top: 5%;
+
 }
 .model-form{
     width:40%;
@@ -511,11 +530,7 @@ nav ul li {
     float: left;
 
 }
-nav ul : hover {
-    border: 3px #FFFFFF;
-    border-radius: 3px;
 
-}
 nav ul li:hover {
 
     color: #FFFFFF;

@@ -10,8 +10,8 @@
 </head>
 <body>
 
-    <div style="background: black;" >
-        <div ><h1 class="model-h1">BANGKU</h1>
+    <div>
+        <div id="img-login"><h1 class="model-h1">BANGKU <label>Sumbang Buku</label> </h1>
         <img src="img/logo.png" style="width: 40%; height: 70%;position: fixed; margin-left: 5%"> </div>
 
         <div class="login">
