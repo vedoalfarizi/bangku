@@ -1,12 +1,28 @@
 <html>
 <head>
 <title>Bangku</title>
+    <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
 <div>
-    <button>1</button>
+    <button id="penerimaan">1</button>
+    <button id="kegiatan">1</button>
+    <button id="cari">1</button>
+    <button id="pend baru">1</button>
+    <div style="width: 80%; height: 400px; "></div>
+</div>
+<button id="ambilbtn">ambil</button>
+<div class="modal" id="modal1">
+<div class="modal-content">
+    <span class="close">&times;</span>
+    <div class="modal-body">
+
+    </div>
+</div>
+
 </div>
 </body>
+<script type="text/javascript" src="../js/script.js"></script>
 
 <?php
 include_once '../fungsi/koneksi.php';
