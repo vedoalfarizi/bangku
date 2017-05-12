@@ -107,7 +107,7 @@
 
 
             </table>
-            <input type="submit" value="Sumbang" name="sumbang" class="bt bt-birusoft-tmbh">
+            <input type="submit" value="Sumbang" name="sumbang" style="width: auto;" class="bt bt-birusoft-tmbh">
         </div>
         </form>
 
