@@ -392,6 +392,7 @@ th {
     background-color: white;
     border-color: #63c9f0;
     border-top-width: 20px;
+    display: none;
     /*margin: 200px;*/
 }
 #a2{
@@ -401,7 +402,12 @@ th {
     background-color: white;
     border-color: #63c9f0;
     border-top-width: 20px;
-    display: none;
+
+}
+#b2{
+    background-color: #63c9f0;
+    border-color: #63c9f0;
+    color: white;
 }
 #a3{
     position: fixed;
