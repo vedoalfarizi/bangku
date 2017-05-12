@@ -163,4 +163,33 @@ if(isset($_POST["ganti"])){
     }
 }
 
+//update biodata organisasi
+if(isset($_POST['updatebioorg'])){
+    $desk       = $_POST['deskripsi'];
+    $npemilik   = $_POST['npemilik'];
+    $noktp      = $_POST['noktp'];
+    $email      = $_POST['email'];
+    $nohp       = $_POST['nohp'];
+    $alamat     = $_POST['alamat'];
+    $web        = $_POST['web'];
+    $ig         = $_POST['ig'];
+    $id         = $_SESSION['id'];
+
+    if($desk!="" && $npemilik!="" && $noktp!="" && $email!="" && $nohp!="" && $alamat!="" && $web!="" && $ig!=""){
+        $ubio = $kon->query("UPDATE user SET deskripsi='$desk', nama_pemilik='$npemilik', no_ktp='$noktp',
+        email='$email', no_hp='$nohp', alamat='$alamat', web='$web', ig='$ig' WHERE id_user='$id'");
+        if($ubio){
+            $u_status = $kon->query("UPDATE user SET status_user=1 WHERE id_user='$id'");
+            $_SESSION['pesan'] = "Berhasil mengubah profil";
+            header('location:../org/profilorg.php');
+        }else{
+            $_SESSION['pesan'] = "Maaf, ada kesalahan data";
+            header('location:../org/profilorg.php');
+        }
+    }else{
+        $_SESSION['pesan'] = "Maaf, tidak boleh ada data yang kosong";
+        header('location:../org/profilorg.php');
+    }
+}
+
 ?>
