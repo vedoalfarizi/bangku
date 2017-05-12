@@ -392,7 +392,6 @@ th {
     background-color: white;
     border-color: #63c9f0;
     border-top-width: 20px;
-    display: none;
     /*margin: 200px;*/
 }
 #a2{
@@ -402,12 +401,7 @@ th {
     background-color: white;
     border-color: #63c9f0;
     border-top-width: 20px;
-
-}
-#b2{
-    background-color: #63c9f0;
-    border-color: #63c9f0;
-    color: white;
+    display: none;
 }
 #a3{
     position: fixed;
@@ -417,18 +411,8 @@ th {
     border-color: #63c9f0;
     border-top-width: 20px;
     display: none;
-    float: left;
 }
-#a4{
-    position: fixed;
-    width: 70%;
-    height: auto;
-    background-color: white;
-    border-color: #63c9f0;
-    border-top-width: 20px;
-    display: none;
-    float: left;
-}
+
 .kotak {
     width: 100%;
     background: #fff;
@@ -472,8 +456,9 @@ nav {
     text-align: center;
     background: #030402;
     border: 3px #FFFFFF;
-
-    position: relative;
+    top: 0%;
+    left: 0%;
+    position: fixed;
 }
 .menu{
     border: 3px #FFFFFF;

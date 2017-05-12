@@ -1,4 +1,9 @@
-<html xmlns="http://www.w3.org/1999/html">
+<?php
+session_start();
+$_SESSION['pesan'];
+include "../fungsi/koneksi.php";
+?>
+<html>
 <head>
     <title>Profil</title>
     <link rel="stylesheet" type="text/css" href="../style/style.css">
@@ -7,8 +12,7 @@
 <!--navigasi-->
 <nav>
 <img src="../img/logo.png">
-   <span> <label>BANGKU</label><br>
-    <label class="dua">Sumbang Buku</label></span>
+    <span><label class="dua"><h3>BANGKU</h3>Sumbang Buku</label><br></span>
     <ul>
         <li><a href="../org/beranda.php">Beranda</a> </li>
         <li><a href="profilorg.php"> Profil </a></li>
@@ -17,20 +21,20 @@
 </nav>
 <div class="kotak"></div>
 <!-- ------------------------------------------ profil -------------------------------------------------------------------------- -->
-
-    <div>
+<?php
+    $id = $_SESSION['id'];
+    $profil = $kon->query("SELECT nama, foto_profil, deskripsi, nama_pemilik, no_ktp, no_hp, alamat, web, email, ig FROM user WHERE id_user='$id'");
+    while($hasil = $profil->fetch_assoc()){
+?>
+    <div style="padding-top: 4%">
         <div class="model-form ">
-            <h1 class="model-form profil" >TANAH OMBAK</h1>
+            <h1 class="model-form profil" ><?php echo $hasil['nama'];?></h1>
             <div align="center">
-                <img src="../img/Default%20Lembaga.png" class="imgprofil">
+                <img src="<?php echo $hasil['foto_profil'];?>" class="imgprofil">
             </div>
 
             <label>Deskripsi</label>
-            <p align="justify">Ruang Baca dan Kreativitas Tanah Ombak merupakan komunitas yang mewadahi
-                anak – anak dan remaja Purus, terutama Purus III, Gang IV dan sekitarnya dengan Pendidikan
-                alternative-kreatif. RBK Tanah Ombak merupakan sebuah litersi wadah pembelajaran, yang spiritnya
-                membangun kecerdasan dan karakter anak – anak didiknya dengan empat hal : belajar, membaca,
-                meningkatkan potensi bakat dan minat serta membangun kemandirian.</p>
+            <p align="justify"><?php echo $hasil['deskripsi'];?></p>
             <table>
                 <tr rowspan="2">
                     <td>
@@ -38,7 +42,7 @@
                     </td>
 
                     <td>
-                        : BAPAK BUDI
+                        : <?php echo $hasil['nama_pemilik'];?>
                     </td>
                 </tr>
                 <tr>
@@ -46,20 +50,20 @@
                 No KTP
                     </td>
                     <td>
-                        : 1511521004
+                        : <?php echo $hasil['no_ktp'];?>
                     </td>
                 </tr>
                     <td colspan="2">
                         <span>
                             <img src="../img/hp.png" class="img-petak">
-                             0898-2628-920
+                            <?php echo $hasil['no_hp'];?>
                        </span>
                     </td>
 
                 <td colspan="2">
                          <span>
                             <img src="../img/email.png" class="img img-bulat">
-                             dartikaaniemarian@gmail.com
+                             <?php echo $hasil['email'];?>
                        </span>
 
                     </td>
@@ -67,23 +71,23 @@
                 <tr>
                 <td colspan="2">
                 <span> <img src="../img/alamat.png" class="img-petak">
-                           Purus III
+                    <?php echo $hasil['alamat'];?>
                 </span>
                 </td>
                 <td>
                     <img src="../img/ig.png" class="img-petak">
-                    Instagram
+                    <?php echo $hasil['ig'];?>
                 </td>
                 </tr>
                 <tr>
                     <td colspan="3">
                         <img src="../img/WWW.png" class="img-petak">
-                        WWW.TANAH-OMBAK.com
+                        <a href="https://<?php echo $hasil['web'];?>"><?php echo $hasil['web'];?></a>
                     </td>
                 </tr>
             </table>
 
-
+<?php } ?>
 
 
 
@@ -101,32 +105,33 @@
 
         <div class="model-form">
             <h1 class="model-form profil">Profil</h1>
-            alert
+            <div class="alert"><?php if($_SESSION['pesan']!=""){
+                    echo $_SESSION['pesan'];
+                }?></div>
+            <?php
+                $id = $_SESSION['id'];
+                $profil = $kon->query("SELECT nama, foto_profil, deskripsi, nama_pemilik, no_ktp, no_hp, alamat, web, email, ig FROM user WHERE id_user='$id'");
+                while($hasil = $profil->fetch_assoc()){
+            ?>
 
-            <form>
+            <form action="../fungsi/proses.php" method="post">
 
                 <div class="nomor"><span>1</span>Ubah Biodata </div>
                 <div class="kotak">
 
-                    <label>Nama Organisasi <input type="text"> </label>
-                    <label>Deskripsi <textarea name="Deskripsi"></textarea></label>
-                    <label>Email  <input type="email" name="email" /></label>
-                    <label> No Hp <input type="text" name="nohp" /></label>
-
-                    <label>Provinsi
-                        <select>da
-                            <option>da</option>
-                            <option>da</option>
-                            <option>da</option></select></label>
-                    <label>Kota
-                        <select>da
-                            <option>da</option>
-                            <option>da</option>
-                            <option>da</option></select></label>
-                    <label>Alamat <textarea name="alamat"></textarea></label>
-                    <input type="submit" name="updatebio" value="Perbarui" />
+                    <label>Deskripsi <textarea name="deskripsi"><?php echo $hasil['deskripsi'];?></textarea></label>
+                    <label>Nama Pemilik  <input type="text" name="npemilik" value="<?php echo $hasil['nama_pemilik'];?>"/></label>
+                    <label>No KTP  <input type="text" name="noktp" value="<?php echo $hasil['no_ktp'];?>"/></label>
+                    <label>Email  <input type="email" name="email" value="<?php echo $hasil['email'];?>"/></label>
+                    <label> No Hp <input type="text" name="nohp" value="<?php echo $hasil['no_hp'];?>"/></label>
+                    <label>Alamat <textarea name="alamat"><?php echo $hasil['alamat'];?></textarea></label>
+                    <label>Web  <input type="text" name="web" value="<?php echo $hasil['web'];?>"/></label>
+                    <label>Ig  <input type="text" name="ig" value="<?php echo $hasil['ig'];?>"/></label>
+                    <input type="submit" name="updatebioorg" value="Perbarui" />
                 </div>
             </form>
+
+            <?php } ?>
             <div class="nomor"><span>2</span>Ubah Passwords</div>
             <div class="kotak">
                 <form>
