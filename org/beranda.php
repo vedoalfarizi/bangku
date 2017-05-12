@@ -18,24 +18,32 @@
         <span class="close">&times;</span>
     </div>
     <div class="modal-body">
-        <form action="../fungsi/proses.php">
 
-            <table>
-                <tr>
-                    <td>masukkan nomor hp</td>
-                    <td><input type="text" name="no_hp"></td>
-                </tr>
-                <tr>
-                    <td>masukkan nomor hp</td>
-                    <td><input type="date" name="tgl_jemput"></td>
-                </tr>
-                <tr>
-                    <td><input type="submit" name="kirimAmbil"></td>
-                </tr>
-            </table>
-        </form>
+            <form action="../fungsi/proses.php" >
+
+                <table>
+                    <tr><h1>Masukan tanggal pengambilan buku</h1></tr>
+                    <tr>
+                        <td>No Hp</td>
+                        <td>0898 - 2628 - 920</td>
+                    </tr>
+
+                    <tr>
+                        <td>Tanggal</td>
+                        <td><input type="date" name="tgl_jemput"></td>
+                    </tr>
+                    <tr >
+                        <td align="center" colspan="2">
+                            <button type="submit" name="kirimAmbil" value="Ambil" class="bt bt-birusoft"> Ambil </button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
     </div>
 </div>
+
+
 
 </div>
 </body>
