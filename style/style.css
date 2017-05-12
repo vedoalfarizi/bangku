@@ -329,25 +329,7 @@ th {
     width: 70%;
     height: 50px;
     background-color: red;
-    z-index: 0;
     margin: 200px;
-}
-#a2{
-    position: fixed;
-    width: 70%;
-    height: 50px;
-    background-color: blue;
-    z-index: -2;
-    margin: 200px;
-}
-#a3{
-    position: fixed;
-    width: 70%;
-    height: 50px;
-    background-color: green;
-    z-index: -1;
-    margin: 200px;
-
 }
 #a2{
     position: fixed;
