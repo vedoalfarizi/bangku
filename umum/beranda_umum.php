@@ -74,9 +74,8 @@
     </div>
 <div id="a2" class="kotak" style="margin-top: 0%;" >
 <?php
-    $quer = "select donasi.tanggal, user.nama, donasi.jumlah from donasi, user WHERE donasi.user_id_penerima = user.id_user AND user.jenis_user = 1";
+    $sumbangan = $kon->query("select donasi.tanggal, user.nama, donasi.jumlah, donasi.id_donasi from donasi, user WHERE donasi.user_id_penerima = user.id_user and donasi.status_buku=2");
 
-    $sel = $kon->query($quer);
     echo "
     <div class=\"kotak\">
 	    <div class=\"tabel\">
@@ -87,17 +86,17 @@
 		    <th>Jumlah</th>
 		    <th>Detail</th>";
 
+        $no = 1;
+        while ($hasil = $sumbangan->fetch_assoc()){
 
-        while ($del =  mysqli_fetch_assoc($sel)){
-            $no = 1;
-            echo "<tr>";
-            echo "<td>".$no."</td>";
-            echo "<td>".$del['tanggal']."</td>";
-            echo "<td>".$del['nama']."</td>";
-            echo "<td>".$del['jumlah']."</td>";
-            echo "<td><a href=''>detail</a></td>";
-//            echo "<td><a href=''>terima</a>&nbsp;<a href=''>batal</a></td>";
-            echo "</tr>";
+            echo "  <tr>
+                        <td>$no</td>
+                        <td>".$hasil['tanggal']."</td>
+                        <td>".$hasil['nama']."</td>
+                        <td>".$hasil['jumlah']."</td>
+                        <td><a href='detail_sumbangan.php?ids=".$hasil['id_donasi']."'>detail</a></td>
+                    </tr>
+            ";
             $no++;
         }
         echo "</table>";
