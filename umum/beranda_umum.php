@@ -139,7 +139,7 @@
                     $query= mysqli_query($kon, $sql);
                     while ($row = mysqli_fetch_assoc($query)) {
                     ?>
-                    <tr><a id="popup" href="blablabala"> <b><?php echo $row['nama'] ?></b></a></tr>
+                    <tr><a id="ambilbtn" style="color: rgb(0, 0, 238); cursor: pointer; text-decoration: underline;" > <b><?php echo $row['nama'] ?></b></a></tr>
                 </td> <br>
                 <tr><?php echo $row['alamat'] ?> </tr>  <br>
                 <tr><?php echo $row['no_hp'] ?> </tr>   <br>
@@ -153,6 +153,46 @@
         <div class="" style="float: left"></div>
         <div id="map" style="height: 300px; width:400px; float: right;"></div>
     <!-- akhir fitur cari sementara disini-->
+    <!--Awal Form Ambil-->
+    <div class="modal" id="modal1">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+
+                <form action="../fungsi/proses.php" >
+
+                    <table>
+                        <tr><h1>Masukan tanggal pengambilan buku</h1></tr>
+                        <tr>
+                            <td>Nama Kegiatan</td>
+                            <td><input type="text" name="NamKet"></td>
+                        </tr>
+
+                        <tr>
+                            <td>Deskripsi</td>
+                            <td><textarea name="" id="" cols="30" rows="10"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td>No. HP</td>
+                            <td>0898 - 2628 - 920</td>
+                        </tr>
+                        <tr>
+                            <td>tanggal Dibutuhkan</td>
+                            <td><input type="date" name="tgl_jemput"></td>
+                        </tr>
+                        <tr >
+                            <td align="center" colspan="2">
+                                <button type="submit" name="kirimAmbil" value="Ambil" class="bt bt-birusoft"> Donasi </button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--Akhir Form Ambil-->
 </div>
 
 <div id="a4" class="kotak" style="margin-top: 0%;">
