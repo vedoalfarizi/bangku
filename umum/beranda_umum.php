@@ -40,8 +40,41 @@
             </form>
         </div>
     </div>
-<div id="a2" style="" ></div>
-<div id="a3" style="" ></div>
+<div id="a2" class="kotak" style="margin-top: 0%;" >
+<?php
+    include_once '../fungsi/koneksi.php';
+
+    $quer = "select donasi.tanggal, user.nama, donasi.jumlah from donasi, user WHERE donasi.user_id_penerima = user.id_user AND user.jenis_user = 1";
+
+    $sel = $kon->query($quer);
+    echo "
+    <div class=\"kotak\">
+	    <div class=\"tabel\">
+		    <table class=\"tabel tabel-garis\"> 
+		    <th>No.</th>
+		    <th>Tanggal</th>
+		    <th>organisasi</th>
+		    <th>Jumlah</th>
+		    <th>Detail</th>";
+
+
+        while ($del =  mysqli_fetch_assoc($sel)){
+            $no = 1;
+            echo "<tr>";
+            echo "<td>".$no."</td>";
+            echo "<td>".$del['tanggal']."</td>";
+            echo "<td>".$del['nama']."</td>";
+            echo "<td>".$del['jumlah']."</td>";
+            echo "<td><a href=''>detail</a></td>";
+//            echo "<td><a href=''>terima</a>&nbsp;<a href=''>batal</a></td>";
+            echo "</tr>";
+            $no++;
+        }
+        echo "</table>";
+        ?>
+    </div>
+
+<div id="a3" class="kotak" style="margin-top: 0%;" ></div>
 </body>
 <script type="text/javascript" src="../js/script.js"></script>
 </html>
