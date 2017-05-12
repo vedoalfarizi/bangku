@@ -22,6 +22,9 @@ $cek4 = $cek3->fetch_assoc();
 
 ?>
 <div>
+    <?php if($_SESSION['pesan']!=""){
+        echo "<div class='alert'>".$_SESSION['pesan']."</div>";
+    }?>
     <div class="model-form ">
         <h1 class="model-form profil" > <?php echo $cek4["nama"]; ?></h1>
         <div align="center">
@@ -60,8 +63,8 @@ $cek4 = $cek3->fetch_assoc();
             <form action="../fungsi/proses.php" method="post" enctype="multipart/form-data">
                 <h2>Ganti Foto</h2>
 
-                <input type="file" name="fprofil" accept="image/*" >Upload Foto </input>
-                <input type="submit" name="updatefotoumum" class="bt bt-birusoft" >Ubah </input>
+                <input type="file" name="fprofil" accept="image/*" >
+                <input type="submit" name="updatefotoumum" class="bt bt-birusoft" value="Ganti">
             </form>
         </div>
     </div>
@@ -73,9 +76,6 @@ $cek4 = $cek3->fetch_assoc();
 
 <div class="model-form">
     <h1 class="model-form profil">Profil</h1>
-    <?php if($_SESSION['pesan']!=""){
-        echo "<div class='alert'>".$_SESSION['pesan']."</div>";
-    }?>
 
     <form action="../fungsi/proses.php" method="post">
 
