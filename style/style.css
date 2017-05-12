@@ -59,6 +59,22 @@
     background-color:#35b4da;
     border-color:#35b4da;
 }
+.bt-hijau{
+    color:#fff;
+    background-color:#c3d445;
+    border-color:#c3d445;
+}
+.bt-hujau.focus
+{
+    color:#fff;
+    background-color: #c3d445;
+    border-color: #c1d455;
+}
+.bt-hijau:hover{
+    color:#fff;
+    background-color: #bcd438;
+    border-color:#bcd438;
+}
 
 /*--------------------------- F O R M ----------------------------------------------------------------------*/
 .model-form{
@@ -89,6 +105,13 @@
     border-radius: 4%;
     height: 200px;
 }
+
+.model-form .imgprofil pp {
+    width:20%;
+    height: 20%;
+}
+
+
 .model-form img {
     width: 30px;
     height: 30px;
@@ -167,21 +190,21 @@
 }
 
 .model-form input[type="submit"]{
-    background: #63c9f0;
+    background: #bcd438;
     padding: 8px 20px 8px 20px;
     border-radius: 5px;
     color: #fff;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
     font: normal 30px 'Bitter', serif;
     box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
-    border: 1px solid #63c9f0;
+    border: 1px solid #bcd438;
     font-size: 15px;
 }
 
 .model-form input[type="button"]:hover,
 .model-form input[type="date"]:hover,
 .model-form input[type="submit"]:hover{
-    background: #ade8f0;
+    background: #c5d45a;
 
     -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
     -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
@@ -422,7 +445,11 @@ th {
 
 
 ::-webkit-file-upload-button {
-    background: #63c9f0;;
+    background: #63c9f0;
     color: #6f6f6f;
     padding: 1em;
+}
+
+a{
+    background: #63c9f0;
 }
