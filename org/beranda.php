@@ -20,7 +20,7 @@ $id = $_SESSION['id'];
     <ul>
         <li><a href="../org/beranda.php">Beranda</a> </li>
         <li><a href="profilorg.php"> Profil </a></li>
-        <li><a href="../index.php">Logout</a></li>
+        <li><a href="../fungsi/logout.php">Logout</a></li>
     </ul>
 </nav>
 <!--Awal Menu Navigasi-->
@@ -144,7 +144,7 @@ $id = $_SESSION['id'];
                         while ($row = mysqli_fetch_assoc($query)) {
                     ?>
                     <tr id="sasala">
-                        <a class="ambilbtn" style="color: rgb(0,0, 238); text-decoration: underline; cursor: pointer"> <b><?php echo $row['nama'] ?></b></a>
+                        <a class="ambilbtn" style="color: rgb(0,0, 238); text-decoration: underline; cursor: pointer"><?php echo $row['nama'] ?></a>
                     </tr>
                     </td><br>
                     <tr><?php echo $row['alamat'] ?> </tr>  <br>
@@ -174,7 +174,7 @@ $id = $_SESSION['id'];
 
                     <table>
                         <?php
-                            $nohp = $kon->query("SELECT ")
+                            $nohp = $kon->query("SELECT no_hp FROM user WHERE id_user=")
                         ?>
                         <tr><h1>Masukan tanggal pengambilan buku</h1></tr>
                         <tr>
