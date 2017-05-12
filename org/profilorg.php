@@ -4,7 +4,22 @@
     <link rel="stylesheet" type="text/css" href="../style/style.css">
 </head>
 <body>
+<!--navigasi-->
+<nav class="menu">
 
+    <!-- Item 1 -->
+    <a href="../org/beranda.php">
+        <label for="slide-item-2"><span>Beranda</span></label>
+    </a>
+
+    <a href="profilorg.php">
+        <label for="slide-item-2"><span>Profil</span></label>
+    </a>
+    <a href="../index.php">
+        <label for="slide-item-2"><span>LogOut</span></label>
+    </a>
+
+    </nav>
 <!-- ------------------------------------------ profil -------------------------------------------------------------------------- -->
 
     <div>
@@ -21,10 +36,11 @@
                 membangun kecerdasan dan karakter anak – anak didiknya dengan empat hal : belajar, membaca,
                 meningkatkan potensi bakat dan minat serta membangun kemandirian.</p>
             <table>
-                <tr>
+                <tr rowspan="2">
                     <td>
-                Nama Pemilik
+                        Pemilik
                     </td>
+
                     <td>
                         : BAPAK BUDI
                     </td>
@@ -34,24 +50,39 @@
                 No KTP
                     </td>
                     <td>
-                        :1511521004
+                        : 1511521004
                     </td>
                 </tr>
-                    <td>
+                    <td colspan="2">
                         <span>
                             <img src="../img/hp.png" class="img-petak">
                              0898-2628-920
                        </span>
                     </td>
 
-                </tr>
-                <tr>
-                    <td>
+                <td colspan="2">
                          <span>
-                            <img src="../img/profil.jpg" class="img img-bulat">
+                            <img src="../img/email.png" class="img img-bulat">
                              dartikaaniemarian@gmail.com
                        </span>
 
+                    </td>
+                </tr>
+                <tr>
+                <td colspan="2">
+                <span> <img src="../img/alamat.png" class="img-petak">
+                           Purus III
+                </span>
+                </td>
+                <td>
+                    <img src="../img/ig.png" class="img-petak">
+                    Instagram
+                </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <img src="../img/WWW.png" class="img-petak">
+                        WWW.TANAH-OMBAK.com
                     </td>
                 </tr>
             </table>
@@ -59,15 +90,13 @@
 
 
 
-            <span> <img src="../img/hp.png" class="img-petak">
-                           Purus III
-                        </span>
+
             <div class="kotak">
 
                 <h2>Verifikasi Data</h2>
                 <label>Untuk menverifikasi data silahkan upload ktp mu</label>
                 <button type="file" name="ktp" class="bt bt-birusoft"/>Upload KTP </button>
-                <button type="submit" name="verifikasi_ktp" class="bt bt-birusoft" />kirim </button>
+                <button type="submit" name="verifikasi_ktp" class="bt bt-hijau" />kirim </button>
             </div>
         </div>
 
@@ -108,10 +137,11 @@
                 <label>Password Lama <input type="password" name="pass1" /></label>
                 <label>Password Baru<input type="password" name="pass2" /></label>
                 <label>Confirm Password <input type="password" name="passkonfirmasi" /></label>
+                    <input type="submit" name="ganti" value="Ganti Password" />
                 </form>
             </div>
 
-            <input type="submit" name="ganti" value="Ganti Password" />
+
 
             <div class="nomor"><span>3</span>Ubah Logo </div>
             <div class="kotak">
@@ -119,10 +149,10 @@
                 <h2>Tukar Login</h2>
 
                 <button type="file" name="ktp" class="bt bt-birusoft"/>Upload KTP </button>
-                <button type="submit" name="verifikasi_ktp" class="bt bt-birusoft" />Ubah </button>
+                <button type="submit" name="verifikasi_ktp" class="bt bt-hijau" />Ubah </button>
                 </form>
             </div>
-            </form>
+
 
         </div>
     </div>
