@@ -344,6 +344,7 @@ th {
     height: 50px;
     background-color: green;
     margin: 200px;
+    display: none;
 }
 
 .kotak {
