@@ -92,7 +92,7 @@ $cek4 = $cek3->fetch_assoc();
         <form action="../fungsi/proses.php" method="post">
             <label>Password Lama <input type="password" name="pass1"  /></label>
             <label>Password Baru<input type="password" name="pass2" id="dpass" /></label>
-            <label>Confirm Password <input type="password" id="cpass" name="passkonfirmasi" onchange="cekone()" /></label>
+            <label>Confirm Password <input type="password" id="cpass" name="passkonfirmasi" onchange="cpas()" /></label>
     </div>
     <input type="submit" name="ganti" value="Ganti Password" />
     </form>
