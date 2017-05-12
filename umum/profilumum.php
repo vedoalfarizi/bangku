@@ -106,3 +106,4 @@ $cek4 = $cek3->fetch_assoc();
 </body>
 <script type="text/javascript" src="../js/script.js"></script>
 </html>
+<?php $_SESSION['pesan']="" ?>
