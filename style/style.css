@@ -310,7 +310,7 @@
     margin: auto;
     padding: 0;
     border: 1px solid #888;
-    width: 25%;
+    width: 35%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.2s;
@@ -429,7 +429,7 @@ th {
 }
 #a1{
     position: fixed;
-    width: 70%;
+    width: auto;
     height: auto;
     background-color: white;
     border-color: #63c9f0;
@@ -439,7 +439,7 @@ th {
 }
 #a2{
     position: fixed;
-    width: 70%;
+    width: auto;
     height: auto;
     background-color: white;
     border-color: #63c9f0;
@@ -453,7 +453,16 @@ th {
 }
 #a3{
     position: fixed;
-    width: 70%;
+    width: auto;
+    height: auto;
+    background-color: white;
+    border-color: #63c9f0;
+    border-top-width: 20px;
+    display: none;
+}
+#a4{
+    position: fixed;
+    width: auto;
     height: auto;
     background-color: white;
     border-color: #63c9f0;
