@@ -1,6 +1,9 @@
 <?php
 session_start();
 $_SESSION["pesan"];
+if(!isset($_SESSION['id'])){
+    header('location:../index.php');
+}
 include "../fungsi/koneksi.php";
 ?>
 
@@ -35,7 +38,11 @@ $cek4 = $cek3->fetch_assoc();
 <div>
     <?php if($_SESSION['pesan']!=""){
         echo "<div class='alert'>".$_SESSION['pesan']."</div>";
-    }?>
+    }
+    if($_SESSION['status']==0){
+        echo "<div class='alert' style='text-align: center'>Maaf,anda harus melegkapi data terlebih dahulu</div>";
+    }
+    ?>
     <div class="model-form ">
         <h1 class="model-form profil" > <?php echo $cek4["nama"]; ?></h1>
         <div align="center">

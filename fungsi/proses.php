@@ -137,6 +137,9 @@ if(isset($_POST['updatefotoumum'])){
             header('location:../umum/profilumum.php');
         } else {
             if (move_uploaded_file($_FILES["fprofil"]["tmp_name"], $target_file)) {
+                $uid = $_SESSION['id'];
+                $status = $kon->query("UPDATE user SET status_user=1 WHERE id_user='$uid'");
+                $_SESSION['status']=1;
                 $_SESSION['pesan'] = "Berhasil mengubah foto";
                 header('location:../umum/profilumum.php');
             } else {
@@ -197,6 +200,7 @@ if(isset($_POST['updatebioorg'])){
         email='$email', no_hp='$nohp', alamat='$alamat', web='$web', ig='$ig' WHERE id_user='$id'");
         if($ubio){
             $u_status = $kon->query("UPDATE user SET status_user=1 WHERE id_user='$id'");
+            $_SESSION['status']=1;
             $_SESSION['pesan'] = "Berhasil mengubah profil";
             header('location:../org/profilorg.php');
         }else{

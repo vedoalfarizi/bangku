@@ -2,6 +2,9 @@
 session_start();
 $_SESSION['pesan'];
 include "../fungsi/koneksi.php";
+    if(!isset($_SESSION['id'])){
+        header('location:../index.php');
+    }
 ?>
 <html>
 <head>
@@ -27,6 +30,12 @@ include "../fungsi/koneksi.php";
     while($hasil = $profil->fetch_assoc()){
 ?>
     <div style="padding-top: 4%">
+        <?php if($_SESSION['status']==0){
+            echo "<div class='alert' style='text-align: center'>Maaf,anda harus melengkapi data terlebih dahulu</div>";
+        }else if($_SESSION['status']==1){
+            echo "<div class='alert' style='text-align: center'>Maaf,akun anda belum diverifikasi</div>";
+        }
+        ?>
         <div class="model-form ">
             <h1 class="model-form profil" ><?php echo $hasil['nama'];?></h1>
             <div align="center">

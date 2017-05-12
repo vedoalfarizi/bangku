@@ -2,7 +2,13 @@
 session_start();
 $_SESSION['pesan'];
 include_once '../fungsi/koneksi.php';
-$id = $_SESSION['id'];
+if(!isset($_SESSION['id'])){
+    header('location:../index.php');
+}else if($_SESSION['status']==0){
+    header('location:profilorg.php');
+}else if($_SESSION['status']==1){
+    header('location:profilorg.php');
+}
 ?>
 <html>
 <head>

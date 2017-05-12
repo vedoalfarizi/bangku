@@ -1,6 +1,11 @@
 <?php
     session_start();
     $_SESSION['pesan'];
+    if(!isset($_SESSION['id'])){
+        header('location:../index.php');
+    }else if($_SESSION['status']==0){
+        header('location:profilumum.php');
+    }
     include '../fungsi/koneksi.php';
 ?>
 <html>
