@@ -118,51 +118,66 @@ if(isset($_POST['updatefotoumum'])){
     $target_dir = "../img/fprofil/";
     $idlah = $_SESSION["id"];
     $target_file = $target_dir.basename($_FILES["fprofil"]["name"]);
-//    $isi = mysqli_query($kon, "update user set foto_ktp = ")
-    $ps = $kon->prepare("update user set foto_ktp = ? where id_user = ?");
-    $ps->bind_param("si",$target_file, $idlah);
-    $ps->execute();
-
+    $filename = basename($_FILES["fprofil"]["name"]);
     $uploadOk = 1;
-    if (file_exists($target_file)) {
-        echo "<script>alert('file sudah ada')</script>";
-        $uploadOk = 0;
-    }
-    if ($_FILES["fprofil"]["size"] > 5000000 ) {
-        echo "<script>alert('file terlalu besar')</script>";
-        $uploadOk = 0;
-    }
 
-    if ($uploadOk == 0) {
-        echo "<script>alert('gagal mengupload file')</script>";
-        header('location:../umum/profilumum.php');
-    } else {
-        if (move_uploaded_file($_FILES["fprofil"]["tmp_name"], $target_file)) {
-            echo "<script>alert('berhasil upload file')</script>";
+    if($filename!=""){
+        $ps = $kon->prepare("update user set foto_ktp = ? where id_user = ?");
+        $ps->bind_param("si",$target_file, $idlah);
+        $ps->execute();
+
+        if ($_FILES["fprofil"]["size"] > 5000000 ) {
+            $_SESSION['pesan'] = "Ukuran file terlalu besar";
+            header('location:../umum/profilumum.php');
+            $uploadOk = 0;
+        }
+
+        if ($uploadOk == 0) {
+            echo "<script>alert('gagal mengupload file')</script>";
             header('location:../umum/profilumum.php');
         } else {
-            echo "<script>alert('terjadi kesalahan saat meupload')</script>";
+            if (move_uploaded_file($_FILES["fprofil"]["tmp_name"], $target_file)) {
+                $_SESSION['pesan'] = "Berhasil mengubah foto";
+                header('location:../umum/profilumum.php');
+            } else {
+                echo "<script>alert('terjadi kesalahan saat meupload')</script>";
+            }
         }
+    }else{
+        $_SESSION['pesan'] = "Maaf, anda belum memilih file foto";
+        header('location:../umum/profilumum.php');
     }
+
 }
 
 if(isset($_POST["ganti"])){
-    $pass1 = md5($_POST["pass1"]);
-    $pass2 = md5($_POST["pass2"]);
-    $passk = md5($_POST["passkonfirmasi"]);
-    echo "berhasil mah";
+    $pass1 = $_POST["pass1"];
+    $pass2 = $_POST["pass2"];
+    $passk = $_POST["passkonfirmasi"];
+    $uid   = $_SESSION['id'];
 
-    if($kon->query("select password from user where password = '$pass1'")){
-        echo "berhasil coy";
-        if($pass2 == $passk){
-            $kon->query("update user set password = '$pass2' where password = '$pass1'");
-            echo "all green";
+    if($pass1!="" && $pass2!="" && $passk!=""){
+        $upass = md5($pass1);
+        $cek = $kon->query("select id_user from user where password = '$upass' and id_user='$uid'");
+        if($cek->num_rows > 0){
+            if($pass2 == $passk){
+                $passnya = md5($pass2);
+                $kon->query("update user set password = '$passnya' where id_user = '$uid'");
+                $_SESSION['pesan'] = "Berhasil mengubah password";
+                header('location:../umum/profilumum.php');
+            }else{
+                $_SESSION['pesan'] = "Password konfirmasi salah";
+                header('location:../umum/profilumum.php');
+            }
         }else{
-            echo "kita berbeda";
+            $_SESSION['pesan'] = "Maaf, password salah";
+            header('location:../umum/profilumum.php');
         }
     }else{
-        echo "query gagal";
+        $_SESSION['pesan'] = "Maaf, tidak boleh ada data yang kosong";
+        header('location:../umum/profilumum.php');
     }
+
 }
 
 //update biodata organisasi
