@@ -11,6 +11,7 @@
     cursor: pointer;
     border: 3px;
     border-radius: 4px;
+    margin-left: 40%;
 }
 
 .btn{
@@ -80,7 +81,31 @@
     background-color: #bcd438;
     border-color:#bcd438;
 }
-
+.alert{
+    color: #686663;
+    border-bottom: 3px solid #f9958e;
+    padding: 1%;
+    border-radius: 1rem;
+}
+.alert:hover{
+    color: #686663;
+    background: #f9e9e4;
+    border-bottom: 3px solid #f9958e;
+    padding: 1%;
+    border-radius: 1rem;
+}
+.link{
+   
+    font-size: 20px;
+    font-style: italic;
+    color: #57b6f0;
+    border-bottom: 2px solid #d9d9d9;
+}
+.link:hover{
+    color: #cff040;
+    border-bottom:3px solid #bcd438;
+    cursor: pointer;
+}
 /*--------------------------- F O R M ----------------------------------------------------------------------*/
 
 .model-h1{
@@ -165,7 +190,7 @@
     background: #f4f4f4;
     border-radius: 10px;
     margin-bottom: 15px;
-    position: static;
+    margin-left:   -5%;
 }
 .model-form h1{
     background: #63c9f0;
@@ -469,6 +494,7 @@ th {
     box-shadow: 0 1px 1px rgba(0,0,0,.05);
     border: 1px solid #E7E7E8;
     margin-top: 10px;
+    margin-right: 10%;
 
 }
 
