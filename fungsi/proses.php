@@ -144,4 +144,23 @@ if(isset($_POST['verifikasi_ktp'])){
     }
 }
 
+if(isset($_POST["ganti"])){
+    $pass1 = md5($_POST["pass1"]);
+    $pass2 = md5($_POST["pass2"]);
+    $passk = md5($_POST["passkonfirmasi"]);
+    echo "berhasil mah";
+
+    if($kon->query("select password from user where password = '$pass1'")){
+        echo "berhasil coy";
+        if($pass2 == $passk){
+            $kon->query("update user set password = '$pass2' where password = '$pass1'");
+            echo "all green";
+        }else{
+            echo "kita berbeda";
+        }
+    }else{
+        echo "query gagal";
+    }
+}
+
 ?>
