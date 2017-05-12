@@ -9,6 +9,17 @@
     <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
+<!--navigasi-->
+<nav>
+    <img src="../img/logo.png">
+    <span> <label>BANGKU</label><br>
+    <label class="dua">Sumbang Buku</label></span>
+    <ul>
+        <li><a href="../org/beranda.php">Beranda</a> </li>
+        <li><a href="profilorg.php"> Profil </a></li>
+        <li><a href="../index.php">Logout</a></li>
+    </ul>
+</nav>
 <div class="tab-gaya">
     <div class="kotak">
         <button id="" onclick="">beranda</button>
