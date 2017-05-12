@@ -10,60 +10,60 @@ $id = $_SESSION['id'];
     <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
-<!--navigasi-->
-<nav>
-    <img src="../img/logo.png">
-    <span> <label>BANGKU</label><br>
-    <label class="dua">Sumbang Buku</label></span>
-    <ul>
-        <li><a href="../org/beranda.php">Beranda</a> </li>
-        <li><a href="profilorg.php"> Profil </a></li>
-        <li><a href="../index.php">Logout</a></li>
-    </ul>
-</nav>
 <!--Awal Menu Navigasi-->
-<div>
-    <button id="penerimaan">1</button>
-    <button id="kegiatan">1</button>
-    <button id="cari">1</button>
-    <button id="pend baru">1</button>
-    <div style="width: 80%; height: 400px; "></div>
-</div>
+<!--navigasi-->
+<!--<nav>-->
+<!--    <img src="../img/logo.png">-->
+<!--    <span> <label>BANGKU</label><br>-->
+<!--    <label class="dua">Sumbang Buku</label></span>-->
+<!--    <ul>-->
+<!--        <li><a href="../org/beranda.php">Beranda</a> </li>-->
+<!--        <li><a href="profilorg.php"> Profil </a></li>-->
+<!--        <li><a href="../index.php">Logout</a></li>-->
+<!--    </ul>-->
+<!--</nav>-->
 <!--Akhir Menu Navigasi-->
 
 <!--Awal Form Ambil-->
-<button id="ambilbtn">ambil</button>
-<div class="modal" id="modal1">
-<div class="modal-content">
-    <div class="modal-header">
-        <span class="close">&times;</span>
-    </div>
-    <div class="modal-body">
+<div id="menu">
+    <button id="b2" class="btn bt-flat" onclick="dua()">sumbangan</button>
+    <button id="b1" class="btn bt-flat" onclick="satu()">sumbang buku</button>
+    <button id="b3" class="btn bt-flat" onclick="tiga()">cari</button>
+    <button id="b4" class="btn bt-flat" onclick="">kegiatan</button>
+    <div class="kotak" id="a1" style="margin-top: 0%;">
+        <button id="ambilbtn">ambil</button>
+        <div class="modal" id="modal1">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                </div>
+                <div class="modal-body">
 
-            <form action="../fungsi/proses.php" >
+                    <form action="../fungsi/proses.php" >
 
-                <table>
-                    <tr><h1>Masukan tanggal pengambilan buku</h1></tr>
-                    <tr>
-                        <td>No Hp</td>
-                        <td>0898 - 2628 - 920</td>
-                    </tr>
+                        <table>
+                            <tr><h1>Masukan tanggal pengambilan buku</h1></tr>
+                            <tr>
+                                <td>No Hp</td>
+                                <td>0898 - 2628 - 920</td>
+                            </tr>
 
-                    <tr>
-                        <td>Tanggal</td>
-                        <td><input type="date" name="tgl_jemput"></td>
-                    </tr>
-                    <tr >
-                        <td align="center" colspan="2">
-                            <button type="submit" name="kirimAmbil" value="Ambil" class="bt bt-birusoft"> Ambil </button>
-                        </td>
-                    </tr>
-                </table>
-            </form>
+                            <tr>
+                                <td>Tanggal</td>
+                                <td><input type="date" name="tgl_jemput"></td>
+                            </tr>
+                            <tr >
+                                <td align="center" colspan="2">
+                                    <button type="submit" name="kirimAmbil" value="Ambil" class="bt bt-birusoft"> Ambil </button>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-<!--Akhir Form Ambil-->
+        <!--Akhir Form Ambil-->
+
 
 
 <!--Awal Penerimaan-->
