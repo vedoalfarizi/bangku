@@ -7,83 +7,34 @@
 <head>
     <title>Sumbang Buku</title>
     <link rel="stylesheet" href="../style/style.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9TGyPXqFWcrrFwu2QRD4kZwdTEeOBGek&callback=initMap" async defer></script>
 </head>
 <body>
 <!--navigasi-->
-<!--<nav>-->
-<!--    <img src="../img/logo.png">-->
-<!--    <span> <label>BANGKU</label><br>-->
-<!--    <label class="dua">Sumbang Buku</label></span>-->
-<!--    <ul>-->
-<!--        <li><a href="../org/beranda.php">Beranda</a> </li>-->
-<!--        <li><a href="profilorg.php"> Profil </a></li>-->
-<!--        <li><a href="../index.php">Logout</a></li>-->
-<!--    </ul>-->
-<!--</nav>-->
-    <div class="tab-gaya">
-        <div class="kotak">
-            <button id="" onclick="">beranda</button>
-            <button id="" onclick="">profil</button>
-            <button id="" onclick="">logout</button>
-
-        </div>
-    </div>
+<nav>
+    <img src="../img/logo.png">
+    <span> <label>BANGKU</label><br>
+    <label class="dua">Sumbang Buku</label></span>
+    <ul>
+        <li><a href="beranda_umum.php">Beranda</a> </li>
+        <li><a href="profilumum.php"> Profil </a></li>
+        <li><a href="../index.php">Logout</a></li>
+    </ul>
+</nav>
+<!--    <div class="tab-gaya">-->
+<!--        <div class="kotak">-->
+<!--            <button id="" onclick="">beranda</button>-->
+<!--            <button id="" onclick="">profil</button>-->
+<!--            <button id="" onclick="">logout</button>-->
+<!---->
+<!--        </div>-->
+<!--    </div>-->
 
 
             <button id="b2" class="btn bt-flat" onclick="dua()">sumbangan</button>
             <button id="b1" class="btn bt-flat" onclick="satu()">sumbang buku</button>
             <button id="b3" class="btn bt-flat" onclick="tiga()">cari</button>
             <button id="b4" class="btn bt-flat" onclick="empat()">kegiatan</button>
-
-            <div class="kotak" id="a1" style="margin-top: 0%;">
-
-                <div>
-                    <div>Tambah Buku</div>
-                    <div class="alert">
-                        <?php
-                        if($_SESSION['pesan']!=""){
-                        echo $_SESSION['pesan'];
-                        }
-                        ?>
-                    </div>
-                    <form action="../fungsi/proses.php" method="post">
-                        <label for="tambah">Jumlah Buku</label>
-                        <input type="text" name="jbuku"><br>
-                        <label for="kategori">Katagori</label>
-                        <input type="checkbox" name="kat[]" value="fiksi">Fiksi
-                        <input type="checkbox" name="kat[]" value="nonf">Non Fiksi<br>
-                        <input type="submit" value="Sumbang" name="sumbang">
-                    </form>
-                </div>
-
-                <div>
-<!--                tampilkan list donasi user yang belum di ambil-->
-                    <?php
-                        $id = $_SESSION['id'];
-                        $donasi = $kon->query("SELECT id_donasi, jumlah, kategori FROM donasi WHERE user_id_pemilik=$id and status_buku=0");
-                        $no = 1;
-                    ?>
-                    <table>
-                        <th>No</th>
-                        <th>Jumlah</th>
-                        <th>Kategori</th>
-                        <th colspan="2">Aksi</th>
-
-                        <?php
-                            while($hasil = $donasi->fetch_assoc()){
-                                echo    "<tr>
-                                        <td>$no</td>
-                                        <td>".$hasil['jumlah']."</td>
-                                        <td>".$hasil['kategori']."</td>
-                                        <td><a href='edit_donasi.php?iddon=".$hasil['id_donasi']."'>edit</a></td>
-                                        <td><a href='hapus_donasi.php?iddon=".$hasil['id_donasi']."'>hapus</a></td>
-                                        </tr>";
-                                        $no++;
-                                }
-                        ?>
-                    </table>
-                </div>
-            </div>
 
 
         <div id="a2" class="kotak" style="margin-top: 0%;" >
@@ -114,6 +65,56 @@
                     echo "</table></div>";
                         ?>
     </div>
+
+<div class="kotak" id="a1" style="margin-top: 0%;">
+
+    <div>
+        <div>Tambah Buku</div>
+        <div class="alert">
+            <?php
+            if($_SESSION['pesan']!=""){
+                echo $_SESSION['pesan'];
+            }
+            ?>
+        </div>
+        <form action="../fungsi/proses.php" method="post">
+            <label for="tambah">Jumlah Buku</label>
+            <input type="text" name="jbuku"><br>
+            <label for="kategori">Katagori</label>
+            <input type="checkbox" name="kat[]" value="fiksi">Fiksi
+            <input type="checkbox" name="kat[]" value="nonf">Non Fiksi<br>
+            <input type="submit" value="Sumbang" name="sumbang">
+        </form>
+    </div>
+
+    <div>
+        <!--                tampilkan list donasi user yang belum di ambil-->
+        <?php
+        $id = $_SESSION['id'];
+        $donasi = $kon->query("SELECT id_donasi, jumlah, kategori FROM donasi WHERE user_id_pemilik=$id and status_buku=0");
+        $no = 1;
+        ?>
+        <table>
+            <th>No</th>
+            <th>Jumlah</th>
+            <th>Kategori</th>
+            <th colspan="2">Aksi</th>
+
+            <?php
+            while($hasil = $donasi->fetch_assoc()){
+                echo    "<tr>
+                                        <td>$no</td>
+                                        <td>".$hasil['jumlah']."</td>
+                                        <td>".$hasil['kategori']."</td>
+                                        <td><a href='edit_donasi.php?iddon=".$hasil['id_donasi']."'>edit</a></td>
+                                        <td><a href='hapus_donasi.php?iddon=".$hasil['id_donasi']."'>hapus</a></td>
+                                        </tr>";
+                $no++;
+            }
+            ?>
+        </table>
+    </div>
+</div>
 
 <div id="a3" class="kotak" style="margin-top: 0%;" >
     <!--akhir fitur cari sementara disini-->
@@ -154,7 +155,7 @@
     <!-- akhir fitur cari sementara disini-->
 </div>
 
-<div id="a4" class="kotak">
+<div id="a4" class="kotak" style="margin-top: 0%;">
 
 </div>
 
@@ -224,7 +225,7 @@
     }
 
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-1Hz75qNfD5pggoNIV-1u3HubAI-3MN4&callback=initMap" async defer></script>
+
 </html>
 
 <?php
