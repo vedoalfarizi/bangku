@@ -15,14 +15,14 @@
 
 .bt-birusoft{
     color:#fff;
-    background-color:#5bc0de;
-    border-color:#46b8da;
+    background-color:#63c9f0;
+    border-color:#63c9f0;
 }
 .bt-birusoft.focus
 {
     color:#fff;
-    background-color:#286090;
-    border-color:#122b40
+    background-color: #57b6f0;
+    border-color:#63c9f0;
 }
 .bt-birusoft:hover{
     color:#fff;
@@ -32,11 +32,12 @@
 
 /*--------------------------- F O R M ----------------------------------------------------------------------*/
 .model-form{
-    width:30%;
-    padding:30px;
+    width:40%;
+    padding: 5%;
     background: #FFF;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+    float: left;
 }
 
 
@@ -69,7 +70,7 @@
 }
 .model-form .kotak{
     padding: 30px;
-    background: #F8F8F8;
+    background: #f4f4f4;
     border-radius: 10px;
     margin-bottom: 15px;
 }
@@ -108,12 +109,12 @@
 
 .model-form .nomor{
     font: normal 20px 'Bitter', serif;
-    color: #2A88AD;
-    margin-bottom: 5px;
-    padding-top:20px;
+    color:  #63c9f0;
+    margin-bottom: 10px;
+
 }
 .model-form .nomor span {
-    background: #2A88AD;
+    background:  #63c9f0;
     padding: 5px 10px 5px 10px;
     position: absolute;
     border-radius: 50%;
@@ -127,22 +128,21 @@
 }
 
 .model-form input[type="submit"]{
-    background: #2A88AD;
+    background: #63c9f0;
     padding: 8px 20px 8px 20px;
     border-radius: 5px;
     color: #fff;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
     font: normal 30px 'Bitter', serif;
     box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
-    border: 1px solid #257C9E;
+    border: 1px solid #63c9f0;
     font-size: 15px;
-    margin-left: 25%;
 }
 
 .model-form input[type="button"]:hover,
 .model-form input[type="date"]:hover,
 .model-form input[type="submit"]:hover{
-    background: #2A6881;
+    background: #ade8f0;
 
     -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
     -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
@@ -181,9 +181,6 @@
     border: 1px solid #63c9f0;
 }
 
-.kiri{
-    float: left;
-}
 /*---------------------------------------------------MODAL-----------------------------------------*/
 
 .modal {
@@ -406,4 +403,8 @@ th {
     line-height: 1.428571429;
 }
 
-
+::-webkit-file-upload-button {
+    background: #63c9f0;;
+    color: #6f6f6f;
+    padding: 1em;
+}
