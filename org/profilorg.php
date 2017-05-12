@@ -13,16 +13,22 @@ include "../fungsi/koneksi.php";
 </head>
 <body>
 <!--navigasi-->
-<nav>
-<img src="../img/logo.png">
-    <span><h3>BANGKU</h3><label class="dua">Sumbang Buku</label><br></span>
-    <ul>
-        <li><a href="../org/beranda.php">Beranda</a> </li>
-        <li><a href="profilorg.php"> Profil </a></li>
-        <li><a href="../fungsi/logout.php">Logout</a></li>
-    </ul>
-</nav>
+<div>
+    <nav>
+        <img src="../img/logo.png">
+        <span> <h1 class="label-menu">BANGKU</label></h1>
+    <label class="label-menu-dua">Sumbang Buku</label></span>
+        <ul>
+            <li><a href="beranda_umum.php">Beranda</a> </li>
+            <li><a href="profilumum.php"> Profil </a></li>
+            <li><a href="../fungsi/logout.php">Logout</a></li>
+        </ul>
+    </nav>
+</div>
 
+<div class="kotak" style="padding: 3.5%;">
+
+</div>
 <!-- ------------------------------------------ profil -------------------------------------------------------------------------- -->
 <?php
     $id = $_SESSION['id'];
@@ -100,13 +106,16 @@ include "../fungsi/koneksi.php";
 
 
 
-            <div class="kotak">
+            <div class="kotak" style="height:30%;">
 
                 <h2>Verifikasi Data</h2>
                 <label>Untuk menverifikasi data silahkan upload ktp mu</label>
-                <button type="file" name="ktp" class="bt bt-birusoft"/>Upload KTP </button>
-                <button type="submit" name="verifikasi_ktp" class="bt bt-hijau" />kirim </button>
-            </div>
+                <div style="margin: 1% 10% 0% -2%; width: 70%;float: left">
+                <input type="file" name="ktp" "/>
+                </div><div style="padding: 1%; margin: 0% 0% 30% 20%; width: 70%;float: left">
+                <button type="submit" name="verifikasi_ktp" class="bt bt-birusoft" />kirim </button>
+                </div>
+                </div>
         </div>
 
 
@@ -154,12 +163,17 @@ include "../fungsi/koneksi.php";
 
 
             <div class="nomor"><span>3</span>Ubah Logo </div>
-            <div class="kotak">
+            <div class="kotak" style="height: 30%;">
                 <form>
-                <h2>Tukar Login</h2>
+                <h2>Ubah foto logo</h2>
+                    <div style="margin: 1% -20% 10% 1%; width: 70%;float: left">
+                        <input type="file" name="logo" />
+                    </div>
+                    <div style="padding: 1%; margin: -7% 0% 30% 20%; width: 70%;float: left">
+                        <button type="submit" name="verifikasi_logo" class="bt bt-birusoft" />kirim </button>
+                    </div>
+            </div>
 
-                <button type="file" name="ktp" class="bt bt-birusoft"/>Upload KTP </button>
-                <button type="submit" name="verifikasi_ktp" class="bt bt-hijau" />Ubah </button>
                 </form>
             </div>
 
