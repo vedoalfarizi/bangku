@@ -107,15 +107,16 @@ include "../fungsi/koneksi.php";
 
 
             <div class="kotak" style="height:30%;">
-
+                <form action="../fungsi/proses.php" method="post" enctype="multipart/form-data">
                 <h2>Verifikasi Data</h2>
                 <label>Untuk menverifikasi data silahkan upload ktp mu</label>
                 <div style="margin: 1% 10% 0% -2%; width: 70%;float: left">
-                <input type="file" name="ktp" "/>
+                <input type="file" name="ktp" accept="image/*">
                 </div><div style="padding: 1%; margin: 0% 0% 30% 20%; width: 70%;float: left">
-                <button type="submit" name="verifikasi_ktp" class="bt bt-birusoft" />kirim </button>
+                <input type="submit" name="verifikasi_ktp" class="bt bt-birusoft" value="kirim" >
                 </div>
                 </div>
+            </form>
         </div>
 
 
@@ -164,13 +165,13 @@ include "../fungsi/koneksi.php";
 
             <div class="nomor"><span>3</span>Ubah Logo </div>
             <div class="kotak" style="height: 30%;">
-                <form>
+                <form action="../fungsi/proses.php" method="post" enctype="multipart/form-data">
                 <h2>Ubah foto logo</h2>
                     <div style="margin: 1% -20% 10% 1%; width: 70%;float: left">
-                        <input type="file" name="logo" />
+                        <input type="file" name="logo" accept="image/*"/>
                     </div>
                     <div style="padding: 1%; margin: -7% 0% 30% 20%; width: 70%;float: left">
-                        <button type="submit" name="verifikasi_logo" class="bt bt-birusoft" />kirim </button>
+                        <input type="submit" name="verifikasi_logo" class="bt bt-birusoft" >
                     </div>
             </div>
 
