@@ -1,20 +1,22 @@
 <?php
 session_start();
-$_SESSION['pesan'] = "";
+$_SESSION['pesan'];
 include 'koneksi.php';
 //tambah buku
 if (isset($_POST['sumbang'])){
-    $id    = $_POST['id'];
     $jbuku  = $_POST['jbuku'];
     $kat    = $_POST['kat'];
+    $id     = $_SESSION['id'];
 
     //apabila kategori yg dipilih lebih dari satu, maka akan dijadikan satu string
     if(count($kat) > 1){
-        $aket = implode(",", $kat);
+        $akat = implode(",", $kat);
+    }else{
+        $akat = $kat[0];
     }
 
-    if($jbuku!="" && $kat!=""){
-//belum bisa karna kurang id        $tambah = $kon->query("INSERT INTO `donasi`(`jumlah`, `kategori`, `user_id_pemilik`) VALUES ('$jbuku', '$akat', '$id')");
+    if($jbuku!="" && $akat!=""){
+        $tambah = $kon->query("INSERT INTO `donasi`(`jumlah`, `kategori`, `user_id_pemilik`) VALUES ('$jbuku', '$akat', '$id')");
         $_SESSION['pesan'] = "Berhasil ditambah";
         header('location:../umum/beranda_umum.php');
     }else{
