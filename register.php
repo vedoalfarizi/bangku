@@ -36,6 +36,7 @@ $_SESSION['pesan'];
                     <div class="nomor">
                         <span>5</span>Provinsi
                         <select id="provinsi" name="provinsi" onchange="ChangeListKota()">
+                            <option value="">--PILIH--</option>
                             <?php
                             include 'fungsi/koneksi.php';
                                 $prov = $kon->query("SELECT * FROM provinsi ORDER BY nama_prov ASC");
@@ -50,8 +51,8 @@ $_SESSION['pesan'];
                     </div>
                     <div class="nomor"><span>6</span>Daftar Sebagai
                         <select name="jenis_user" >
-                            <option value="org" >organisasi/komunitas</option>
-                            <option value="Umum" >Umum</option>
+                            <option value="1" >Umum</option>
+                            <option value="2" >Organisasi/Komunitas</option>
                         </select>
                     </div>
                 </div>
@@ -59,23 +60,41 @@ $_SESSION['pesan'];
                 <input type="submit" name="register" value="Register"/>
 
             </form>
+            Sudah punya akun? Login<a href="index.php">disini</a>
         </div>
 
 </body>
 <script>
     var kotas = {};
-    kotas['Aceh'] = ['Banda Aceh', 'Langsa', 'Meulaboh', 'Sabang'];
-    kotas['Bali'] = ['Denpasar'];
-    kotas['Gorontalo'] = ['Gorontalo'];
-    kotas['Jakarta'] = ['Jakarta Barat', 'Jakarta Pusat', 'Jakarta Selatan'];
-    kotas['Kalimantan Barat'] = ['Pontianak', 'Singkawang'];
-    kotas['Lampung'] = ['Bandar Lampung', 'Metro'];
-    kotas['Maluku Utara'] = ['Ternate', 'Tidore'];
-    kotas['Nusa Tenggara Barat'] = ['Bima', 'Mataram', 'Kupang'];
-    kotas['Papua Barat'] = ['Sorong'];
-    kotas['Riau'] = ['Dumai', 'Pekanbaru'];
-    kotas['Sumatera Barat'] = ['Bukittinggi', 'Padang', 'Padang Panjang', 'Pariaman'];
+    kotas[1] = ['Banda Aceh', 'Langsa', 'Meulaboh', 'Sabang'];
+    kotas[2] = ['Denpasar'];
+    kotas[3] = ['Gorontalo'];
+    kotas[4] = ['Jakarta Barat', 'Jakarta Pusat', 'Jakarta Selatan'];
+    kotas[5] = ['Pontianak', 'Singkawang'];
+    kotas[6] = ['Bandar Lampung', 'Metro'];
+    kotas[7] = ['Ternate', 'Tidore'];
+    kotas[8] = ['Bima', 'Mataram', 'Kupang'];
+    kotas[9] = ['Sorong'];
+    kotas[10] = ['Dumai', 'Pekanbaru'];
+    kotas[11] = ['Bukittinggi', 'Padang', 'Padang Panjang', 'Pariaman'];
 
+    function ChangeListKota(){
+        var listP = document.getElementById("provinsi");
+        var listK = document.getElementById("kota");
+        var selK = listP.options[listP.selectedIndex].value;
+        while(listK.options.length){
+            listK.remove(0);
+        }
+
+        var kota = kotas[selK];
+        if(kota){
+            var i;
+            for(i = 0; i<kota.length; i++){
+                var kot = new Option(kota[i], kota[i].value);
+                listK.options.add(kot);
+            }
+        }
+    }
 </script>
 </HTML>
 

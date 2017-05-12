@@ -64,18 +64,21 @@ if(isset($_POST['register'])){
     $email = $_POST['email'];
     $pass = $_POST['password'];
     $alamat = $_POST['alamat'];
+    $provinsi = $_POST['provinsi'];
+    $kota = $_POST['kota'];
     $jenis = $_POST['jenis_user'];
 
-    if($uname!="" && $email!="" && $pass!="" && $alamat!="" && $jenis!=""){
-        $daftar = $kon->prepare("INSERT INTO user(`nama`, `email`, `password`, `alamat`, `jenis_user`) VALUES (?, ?, ?, ?, ?)");
-        $daftar->bind_param("ssssi", $uname, $email, $pass, $alamat, $jenis);
-
-        if($daftar->execute()){
+    if($uname!="" && $email!="" && $pass!="" && $alamat!="" && $provinsi!="" && $kota!="" && $jenis!=""){
+        $upass = md5($pass);
+        $daftar = $kon->prepare("INSERT INTO user(`nama`, `email`, `password`, `alamat`, `provinsi_id`, `kota`, `jenis_user`) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        if($daftar){
+            $daftar->bind_param("ssssisi", $uname, $email, $upass, $alamat, $provinsi, $kota, $jenis);
+            $daftar->execute();
             $_SESSION['pesan']="Pendaftaran berhasil";
             header('location:../register.php');
         }else{
-//            $_SESSION['pesan']="Maaf, ada kesalahan pada data anda";
-//            header('location:../register.php');
+            $_SESSION['pesan']="Maaf, ada kesalahan pada data anda";
+            header('location:../register.php');
         }
     }else{
         $_SESSION['pesan']="Maaf, tidak boleh ada data yang kosong";
