@@ -1,20 +1,22 @@
 <?php
 session_start();
-$_SESSION['pesan'] = "";
+$_SESSION['pesan'];
 include 'koneksi.php';
 //tambah buku
 if (isset($_POST['sumbang'])){
-    $id    = $_POST['id'];
     $jbuku  = $_POST['jbuku'];
     $kat    = $_POST['kat'];
+    $id     = $_SESSION['id'];
 
     //apabila kategori yg dipilih lebih dari satu, maka akan dijadikan satu string
     if(count($kat) > 1){
-        $aket = implode(",", $kat);
+        $akat = implode(",", $kat);
+    }else{
+        $akat = $kat[0];
     }
 
-    if($jbuku!="" && $kat!=""){
-//belum bisa karna kurang id        $tambah = $kon->query("INSERT INTO `donasi`(`jumlah`, `kategori`, `user_id_pemilik`) VALUES ('$jbuku', '$akat', '$id')");
+    if($jbuku!="" && $akat!=""){
+        $tambah = $kon->query("INSERT INTO `donasi`(`jumlah`, `kategori`, `user_id_pemilik`) VALUES ('$jbuku', '$akat', '$id')");
         $_SESSION['pesan'] = "Berhasil ditambah";
         header('location:../umum/beranda_umum.php');
     }else{
@@ -85,4 +87,61 @@ if(isset($_POST['register'])){
         header('location:../register.php');
     }
 }
+
+//tambahkegiatan
+if(isset($_POST['tambahkegiatan'])){
+    $nkeg   = $_POST['nkeg'];
+    $alamat = $_POST['alamat'];
+    $desk   = $_POST['desk'];
+    $kat    = $_POST['kat'];
+    $tkeg   = $_POST['tkeg'];
+    $uid    = $_SESSION['id'];
+
+    if(count($kat) > 1){
+        $kat = implode(",", $kat);
+    }else{
+        $kat = $kat[0];
+    }
+
+    if($nkeg!="" && $desk!="" && $kat!="" && $tkeg!="" && $alamat!=""){
+        $tambah = $kon->query("INSERT INTO kegiatan(`nama_kegiatan`, `deskripsi`, `kategori`, `tanggal`, `user_id`, `alamat`) VALUES ('$nkeg','$desk','$kat','$tkeg','$uid','$alamat')");
+        $_SESSION['pesan'] = "Kegiatan berhasil ditambahkan";
+        header('location:../org/beranda.php');
+    }else{
+        $_SESSION['pesan'] = "Maaf, mohon lengkapi data anda";
+        header('location:../org/beranda.php');
+    }
+}
+
+if(isset($_POST['verifikasi_ktp'])){
+
+    $target_dir = "../img/ktp/";
+    $idlah = $_SESSION["id"];
+    $target_file = $target_dir.basename($_FILES["ktp"]["name"]);
+//    $isi = mysqli_query($kon, "update user set foto_ktp = ")
+    $ps = $kon->prepare("update user set foto_ktp = ? where id_user = ?");
+    $ps->bind_param("si",$target_file, $idlah);
+    $ps->execute();
+
+    $uploadOk = 1;
+    if (file_exists($target_file)) {
+        echo "<script>alert('file sudah ada')</script>";
+        $uploadOk = 0;
+    }
+    if ($_FILES["ktp"]["size"] > 5000000 ) {
+        echo "<script>alert('file terlalu besar')</script>";
+        $uploadOk = 0;
+    }
+
+    if ($uploadOk == 0) {
+        echo "<script>alert('gagal mengupload file')</script>";
+    } else {
+        if (move_uploaded_file($_FILES["ktp"]["tmp_name"], $target_file)) {
+            echo "<script>alert('berhasil upload file')</script>";
+        } else {
+            echo "<script>alert('terjadi kesalahan saat meupload')</script>";
+        }
+    }
+}
+
 ?>

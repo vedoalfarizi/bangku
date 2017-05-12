@@ -1,9 +1,16 @@
+<?php
+session_start();
+$_SESSION['pesan'];
+include_once '../fungsi/koneksi.php';
+$id = $_SESSION['id'];
+?>
 <html>
 <head>
 <title>Bangku</title>
     <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
+<!--Awal Menu Navigasi-->
 <div>
     <button id="penerimaan">1</button>
     <button id="kegiatan">1</button>
@@ -11,6 +18,9 @@
     <button id="pend baru">1</button>
     <div style="width: 80%; height: 400px; "></div>
 </div>
+<!--Akhir Menu Navigasi-->
+
+<!--Awal Form Ambil-->
 <button id="ambilbtn">ambil</button>
 <div class="modal" id="modal1">
 <div class="modal-content">
@@ -42,15 +52,11 @@
         </div>
     </div>
 </div>
+<!--Akhir Form Ambil-->
 
 
-
-</div>
-</body>
-<script type="text/javascript" src="../js/script.js"></script>
-
+<!--Awal Penerimaan-->
 <?php
-include_once '../fungsi/koneksi.php';
 
 $quer = "select donasi.tanggal, donasi.user_id_pemilik,donasi.jumlah from donasi, user WHERE donasi.user_id_pemilik = user.id_user AND user.jenis_user = 2";
 
@@ -83,5 +89,72 @@ while ($del =  mysqli_fetch_assoc($sel)){
 echo "</table>";
 
 ?>
+<!--Akhir Penerimaan-->
 
+<!--Awal kegiatan-->
+<div>
+    <div>Tambah Kegiatan</div>
+    <div class="alert">
+        <?php
+        if($_SESSION['pesan']!=""){
+            echo $_SESSION['pesan'];
+        }
+        ?>
+    </div>
+    <div>
+        <form action="../fungsi/proses.php" method="post">
+            <label>Nama Kegiatan</label>
+            <input type="text" name="nkeg">
+            <label>Alamat</label>
+            <input type="text" name="alamat">
+            <label>Deskripsi</label>
+            <textarea name="desk"></textarea>
+            <label>Katagori</label>
+            <input type="checkbox" name="kat[]" value="fiksi">Fiksi
+            <input type="checkbox" name="kat[]" value="nonf">Non Fiksi<br>
+            <label>Tanggal Kegiatan</label>
+            <input type="date" name="tkeg">
+            <input type="submit" value="Bagikan" name="tambahkegiatan">
+        </form>
+    </div>
+</div>
+
+<?php
+    $tampil = $kon->query("SELECT id_kegiatan, nama_kegiatan, deskripsi, alamat, tanggal FROM kegiatan WHERE user_id='$id' ORDER BY tanggal ASC");
+    $no = 1;
+?>
+<div>
+    <div>List Kebutuhan</div>
+    <div>
+        <table>
+            <th>No</th>
+            <th>Kegiatan</th>
+            <th>Deskripsi</th>
+            <th>Jadwal</th>
+            <th>Alamat</th>
+            <th colspan="2">Aksi</th>
+
+            <?php
+            while($hasil = $tampil->fetch_assoc()){
+                echo    "<tr>
+                            <td>$no</td>
+                            <td>".$hasil['nama_kegiatan']."</td>
+                            <td>".$hasil['deskripsi']."</td>
+                            <td>".$hasil['tanggal']."</td>
+                            <td>".$hasil['alamat']."</td>
+                            <td><a href='edit_kegiatan.php?id=".$hasil['id_kegiatan']."'>Edit</a></td>
+                            <td><a href='hapus_kegiatan.php?id=".$hasil['id_kegiatan']."'>Hapus</a></td>
+                        </tr>";
+                $no++;
+            }
+            ?>
+        </table>
+    </div>
+</div>
+<!--Akhir kegiatan-->
+<script type="text/javascript" src="../js/script.js"></script>
+</body>
 </html>
+<?php
+$_SESSION['pesan']="";
+?>
