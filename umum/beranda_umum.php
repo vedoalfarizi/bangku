@@ -9,15 +9,20 @@
 <body>
 <div class="tab-gaya">
     <div class="kotak">
-        <button id="b2" onclick="dua()">sumbangan</button>
-        <button id="b1" onclick="satu()">sumbang buku</button>
-        <button id="b3" onclick="tiga()">cari</button>
-        <button id="b4" onclick="">kegiatan</button>
+        <button id="" onclick="">beranda</button>
+        <button id="" onclick="">profil</button>
+        <button id="" onclick="">logout</button>
+
     </div>
 </div>
 
     <div id="menu">
-        <div class="kotak" id="a1">
+        <button id="b2" class="btn bt-flat" onclick="dua()">sumbangan</button>
+        <button id="b1" class="btn bt-flat" onclick="satu()">sumbang buku</button>
+        <button id="b3" class="btn bt-flat" onclick="tiga()">cari</button>
+        <button id="b4" class="btn bt-flat" onclick="">kegiatan</button>
+        <div class="kotak" id="a1" style="margin-top: 0%;">
+
             <div class="alert">
                 <?php
                 if($_SESSION['pesan']!=""){
