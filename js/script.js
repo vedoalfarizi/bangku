@@ -3,7 +3,7 @@
  */
 
 var modal = document.getElementById('modal1');
-var btn2 = document.getElementById('ambilbtn');
+// var btn2 = document.getElementById('ambilbtn');
 var btn = document.getElementsByClassName("ambilbtn")[0];
 var btn1 = document.getElementsByClassName("ambilbtn")[1];
 var span = document.getElementsByClassName("close")[0];
@@ -11,9 +11,6 @@ btn.onclick = function() {
     modal.style.display = "block";
 }
 btn1.onclick = function() {
-    modal.style.display = "block";
-}
-btn2.onclick = function() {
     modal.style.display = "block";
 }
 
