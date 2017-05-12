@@ -8,25 +8,35 @@
     <link rel="stylesheet" type="text/css" href="style/style.css">
 
 </head>
-<body class="login">
+<body>
 
-<div class="login-kiri">
-    <div class="kotak model-form">
+    <div style="background: black;" >
+        <div ><h1 class="model-h1">BANGKU</h1>
+        <img src="img/logo.png" style="width: 40%; height: 70%;position: fixed; margin-left: 5%"> </div>
+
+        <div class="login">
+         <div class="kotak model-form" >
 
         <form class="login-form" action="fungsi/proses.php" method="post" onsubmit="validasi()">
 
             <h1> Login </h1>
-            <img class="img-bulat" src="img/coba.jpeg">
-            <br>
+            <div align="center">
+            <img style="width: 30%; height: 30%;" src="img/Default%20User.png">
+            </div>
             <div class="alert"><?php if($_SESSION['pesan']!=""){
                     echo $_SESSION['pesan'];
-                }?></div>
+                }?>
+            </div>
             <input type="text" name="username" placeholder="Username">
 
             <input type="password" name="password" placeholder="Password">
             <br>
-            <button type="submit" name="login" value="login" class="bt bt-biru"> login </button>
+            <div align="center">
+            <button type="submit" name="login" value="login" class="bt bt-birusoft" style="float: left;margin-left: 14%"> login </button>
+            </div>
+
         </form>
+        <a href="register.php"><button  class="bt bt-birusoft" style="float: left; margin-left: 10%"> Register</button></a>
     </div>
 </div>
 
