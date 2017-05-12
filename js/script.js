@@ -20,6 +20,8 @@ window.onclick = function(modal) {
     }
 }
 
+//--------------------------------------------------------------------------------------------------------------
+
 function satu() {
     var a1 = document.getElementById('a1');
     var b1 = document.getElementById('a2');
@@ -28,22 +30,6 @@ function satu() {
     a1.style.display = 'block';
     b1.style.display = 'none';
     c1.style.display = 'none';
-    // console.log("berhasil1");
-    // b1 = document.getElementById('b1');
-    // b1.style.backgroundColor= 'red';
-    // b12 = document.getElementById('b2');
-    // b12.style.backgroundColor= '';
-    // b13 = document.getElementById('b3');
-    // b13.style.backgroundColor= '';
-}
-window.onload() = function () {
-    var qq = document.getElementById('a1');
-    var qw = document.getElementById('a2');
-    var qe = document.getElementById('a3');
-
-    qq.style.display = 'block';
-    qw.style.display = 'none';
-    qe.style.display = 'none';
 }
 function dua() {
     var a2 = document.getElementById('a1');
