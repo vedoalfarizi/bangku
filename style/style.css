@@ -367,6 +367,7 @@ th {
     background-color: white;
     border-color: #63c9f0;
     border-top-width: 20px;
+    display: none;
 }
 #a3{
     position: fixed;
@@ -375,6 +376,7 @@ th {
     background-color: white;
     border-color: #63c9f0;
     border-top-width: 20px;
+    display: none;
 }
 
 .kotak {
@@ -385,7 +387,6 @@ th {
     border: 1px solid #E7E7E8;
     margin-top: 10px;
 }
-
 
 /*--------------- ----------------------------------IMG --------------------------------------------------------------------------------*/
 
