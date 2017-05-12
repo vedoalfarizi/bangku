@@ -458,7 +458,7 @@ nav {
     border: 3px #FFFFFF;
     top: 0%;
     left: 0%;
-    position: fixed;
+    position: relative;
 }
 .menu{
     border: 3px #FFFFFF;
@@ -478,7 +478,7 @@ nav ul li {
     float: left;
 
 }
-nav ul : hover {
+nav ul :hover {
     border: 3px #FFFFFF;
     border-radius: 3px;
 
@@ -495,7 +495,7 @@ nav ul li a {
 }
 nav ul li:hover a {
     color: #FFFFFF;
-    border-bottom-color:  #FFFFF;
+    border-bottom-color: #FFFFFF;
 }
 
 nav img{
