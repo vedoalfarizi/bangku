@@ -429,7 +429,7 @@ th {
 }
 #a1{
     position: fixed;
-    width: auto;
+    width: 80%;
     height: auto;
     background-color: white;
     border-color: #63c9f0;
@@ -439,7 +439,7 @@ th {
 }
 #a2{
     position: fixed;
-    width: auto;
+    width: 80%;
     height: auto;
     background-color: white;
     border-color: #63c9f0;
@@ -453,7 +453,7 @@ th {
 }
 #a3{
     position: fixed;
-    width: auto;
+    width: 80%;
     height: auto;
     background-color: white;
     border-color: #63c9f0;
@@ -462,7 +462,7 @@ th {
 }
 #a4{
     position: fixed;
-    width: auto;
+    width: 80%;
     height: auto;
     background-color: white;
     border-color: #63c9f0;
