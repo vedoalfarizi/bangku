@@ -36,6 +36,8 @@ $cek4 = $cek3->fetch_assoc();
 
 ?>
 <div>
+    <div class="kotak" style="padding: 4%;">
+    </div>
     <?php if($_SESSION['pesan']!=""){
         echo "<div class='alert'>".$_SESSION['pesan']."</div>";
     }
@@ -43,6 +45,7 @@ $cek4 = $cek3->fetch_assoc();
         echo "<div class='alert' style='text-align: center'>Maaf,anda harus melegkapi data terlebih dahulu</div>";
     }
     ?>
+    </div>
     <div class="model-form ">
         <h1 class="model-form profil" > <?php echo $cek4["nama"]; ?></h1>
         <div align="center">
