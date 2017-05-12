@@ -18,7 +18,8 @@
         <span class="close">&times;</span>
     </div>
     <div class="modal-body">
-        <form action="../fungsi/proses.php" method="post">
+        <form action="../fungsi/proses.php">
+
             <table>
                 <tr>
                     <td>masukkan nomor hp</td>
@@ -29,7 +30,7 @@
                     <td><input type="date" name="tgl_jemput"></td>
                 </tr>
                 <tr>
-                    <td colspan="2" align="center"><input type="submit" name="kirimAmbil"></td>
+                    <td><input type="submit" name="kirimAmbil"></td>
                 </tr>
             </table>
         </form>
@@ -46,13 +47,16 @@ include_once '../fungsi/koneksi.php';
 $quer = "select donasi.tanggal, donasi.user_id_pemilik,donasi.jumlah from donasi, user WHERE donasi.user_id_pemilik = user.id_user AND user.jenis_user = 2";
 
 $sel = $kon->query($quer);
-echo "<table>
-<th>No.</th>
-<th>Tanggal</th>
-<th>Pendonasi</th>
-<th>Jumlah</th>
-<th>Detail</th>
-<th>Konfirmasi</th>";
+echo "
+<div class=\"kotak\">
+	<div class=\"tabel\">
+		<table class=\"tabel tabel-garis\"> 
+		<th>No.</th>
+		<th>Tanggal</th>
+		<th>Pendonasi</th>
+		<th>Jumlah</th>
+		<th>Detail</th>
+		<th>Konfirmasi</th>";
 
 
 while ($del =  mysqli_fetch_assoc($sel)){
