@@ -7,7 +7,7 @@
     <button>1</button>
 </div>
 </body>
-</html>
+
 <?php
 include_once '../fungsi/koneksi.php';
 
@@ -37,3 +37,7 @@ while ($del =  mysqli_fetch_assoc($sel)){
 }
 
 echo "</table>";
+
+?>
+
+</html>
