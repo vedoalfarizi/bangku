@@ -19,8 +19,8 @@ include "../fungsi/koneksi.php";
         <span> <h1 class="label-menu">BANGKU</label></h1>
     <label class="label-menu-dua">Sumbang Buku</label></span>
         <ul>
-            <li><a href="beranda_umum.php">Beranda</a> </li>
-            <li><a href="profilumum.php"> Profil </a></li>
+            <li><a href="beranda.php">Beranda</a> </li>
+            <li><a href="profilorg.php"> Profil </a></li>
             <li><a href="../fungsi/logout.php">Logout</a></li>
         </ul>
     </nav>
