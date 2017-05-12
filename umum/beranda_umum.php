@@ -4,25 +4,26 @@
 <html>
 <head>
     <title>Sumbang Buku</title>
-    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
 <div class="tab-gaya">
     <div class="kotak">
-        <button id="b1" onClick="satu()">Beranda</button>
-        <button id="b2" onClick="dua()">Profil</button>
-        <button id="b3" onClick="tiga()">LogOut</button>
-        <div id="a1" style="" >
+        <button id="b1" onclick="satu()">Beranda</button>
+        <button id="b2" onclick="dua()">Profil</button>
+        <button id="b3" onclick="tiga()">LogOut</button>
     </div>
 </div>
 
-
-</div>
     <div id="menu">
-        <div class="kotak">
-            <div class="alert"><?php if($_SESSION['pesan']!=""){
+        <div class="kotak" id="a1">
+            <div class="alert">
+                <?php
+                if($_SESSION['pesan']!=""){
                     echo $_SESSION['pesan'];
-                }?></div>
+                }
+                ?>
+            </div>
             <form action="../fungsi/proses.php" method="post">
                 <label for="tambah">Tambah Buku</label>
                 <input type="text" name="jbuku"><br>
@@ -33,7 +34,6 @@
             </form>
         </div>
     </div>
-</div>
 <div id="a2" style="" ></div>
 <div id="a3" style="" ></div>
 </body>
