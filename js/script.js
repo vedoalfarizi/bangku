@@ -26,10 +26,12 @@ function satu() {
     var a1 = document.getElementById('a1');
     var b1 = document.getElementById('a2');
     var c1 = document.getElementById('a3');
+    var d1 = document.getElementById('a4');
 
     a1.style.display = 'block';
     b1.style.display = 'none';
     c1.style.display = 'none';
+    d1.style.display = 'none';
 
     var bt1 = document.getElementById('b1');
     bt1.style.backgroundColor = '#63c9f0';
@@ -52,10 +54,12 @@ function dua() {
     var a2 = document.getElementById('a1');
     var b2 = document.getElementById('a2');
     var c2 = document.getElementById('a3');
+    var d2 = document.getElementById('a3');
 
     a2.style.display = 'none';
     b2.style.display = 'block';
     c2.style.display = 'none';
+    d2.style.display = 'none';
 
     var bt12 = document.getElementById('b2');
     bt12.style.backgroundColor = '#63c9f0';
@@ -79,11 +83,12 @@ function tiga() {
     var a3 = document.getElementById('a1');
     var b3 = document.getElementById('a2');
     var c3 = document.getElementById('a3');
+    var d3 = document.getElementById('a4');
 
     a3.style.display = 'none';
     b3.style.display = 'none';
     c3.style.display = 'block';
-    c3.style.position ='fixed';
+    d3.style.display = 'none';
 
     var bt13 = document.getElementById('b3');
     bt13.style.backgroundColor = '#63c9f0';
@@ -112,7 +117,7 @@ function empat() {
     a3.style.display = 'none';
     b3.style.display = 'none';
     c3.style.display = 'none';
-    c4.style.display = 'block';
+    d3.style.display = 'block';
     // c3.style.position ='fixed';
 
     var bt13 = document.getElementById('b4');
@@ -131,5 +136,15 @@ function empat() {
     bt43.style.backgroundColor = 'white';
     bt43.style.color = '#63c9f0';
     bt43.style.borderColor = '#63c9f0';
+}
+
+window.onload() = function () {
+    var aa2 = document.getElementById('a1');
+    var ba2 = document.getElementById('a2');
+    var ca2 = document.getElementById('a3');
+
+    aa2.style.display = 'none';
+    ba2.style.display = 'block';
+    ca2.style.display = 'none';
 }
 //------------------------------------------------------
