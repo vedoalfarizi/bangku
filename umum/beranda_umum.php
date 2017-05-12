@@ -15,8 +15,6 @@
 
     </div>
 </div>
-
-    <div id="menu">
         <button id="b2" class="btn bt-flat" onclick="dua()">sumbangan</button>
         <button id="b1" class="btn bt-flat" onclick="satu()">sumbang buku</button>
         <button id="b3" class="btn bt-flat" onclick="tiga()">cari</button>
@@ -39,7 +37,8 @@
                 <input type="submit" value="Sumbang" name="sumbang">
             </form>
         </div>
-    </div>
+
+<!--ini isi dari menu sumbangan-->
 <div id="a2" class="kotak" style="margin-top: 0%;" >
 <?php
     include_once '../fungsi/koneksi.php';
@@ -66,7 +65,6 @@
             echo "<td>".$del['nama']."</td>";
             echo "<td>".$del['jumlah']."</td>";
             echo "<td><a href=''>detail</a></td>";
-//            echo "<td><a href=''>terima</a>&nbsp;<a href=''>batal</a></td>";
             echo "</tr>";
             $no++;
         }
