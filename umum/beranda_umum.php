@@ -244,7 +244,59 @@
 </div>
 
 <div id="a4" class="kotak" style="margin-top: 0%;">
+    <div class="tabel">
+        <table class="tabel tabel-garis">
+            <th>No</th>
+            <th>Organisasi</th>
+            <th>Kegiatan</th>
+            <th>Kategori</th>
+            <th>Kota</th>
+            <th>Tanggal</th>
+            <th>Lihat</th>
 
+            <?php
+                date_default_timezone_set("Asia/Jakarta");
+                $tgl = date('Y-m-d');
+
+                $datetime = new DateTime($tgl);
+                $ketemu=false;
+                while($ketemu==false){
+                    $basis_tgl = $datetime->format('Y-m-d');
+                    $day = (date('D', strtotime($basis_tgl)));
+                    if($day!='Mon'){
+                        $datetime->modify('-1 day');
+                    }else{
+                        $ketemu=true;
+                    }
+                }
+                $datetime2 = new DateTime($basis_tgl);
+                $datetime2->modify('+6 day');
+
+                $kegiatan = $kon->query("SELECT user.nama, kegiatan.nama_kegiatan, kegiatan.kategori, user.kota, 
+                kegiatan.tanggal, kegiatan.id_kegiatan FROM kegiatan, user WHERE kegiatan.user_id= user.id_user 
+                ORDER BY kegiatan.tanggal ASC");
+
+                $no = 1;
+                while($hasil = $kegiatan->fetch_assoc()){
+                    if($hasil['tanggal'] >= $basis_tgl && $hasil['tanggal'] < $datetime2) {
+                        echo "
+                                <tr>
+                                    <td>$no</td>
+                                    <td>" . $hasil['nama'] . "</td>
+                                    <td>" . $hasil['nama_kegiatan'] . "</td>
+                                    <td>" . $hasil['kategori'] . "</td>
+                                    <td>" . $hasil['kota'] . "</td>
+                                    <td>" . $hasil['tanggal'] . "</td>
+                                    <td><a href='beranda_umum.php?idk=" . $hasil['id_kegiatan'] . "'>Lihat</a></td>
+                                </tr>
+                                ";
+                        $no++;
+                    }
+                }
+            ?>
+
+        </table>
+    </div>
 </div>
 
 </body>
