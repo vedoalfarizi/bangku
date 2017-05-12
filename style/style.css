@@ -44,7 +44,6 @@
     /*text-shadow: -1px 1px #193047;*/
 }
 
-
 .bt-birusoft{
     width: 30%;
     color: #63c9f0;
@@ -72,7 +71,7 @@
     -o-transform : scale(2,2);
     transform : scale(1.2,1.2);
 }
-.bt-hijau{
+bt-hijau{
     color:#fff;
     background-color:transparent;
     border-color:#c3d445;
@@ -125,6 +124,20 @@
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
 
     font: normal 40px 'Cambria', serif;
+    border: 1px solid #d9d9d9;
+    border-bottom: 10px solid #d9d9d9;
+}
+
+.model-h1-menu{
+    background: #b6f06f;
+
+    padding: 15px 0px 10px 30px;
+    margin: -20px -20px 10px -20px;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+    font-style: italic;
+    font: normal 12px;
     border: 1px solid #d9d9d9;
     border-bottom: 10px solid #d9d9d9;
 }
@@ -231,11 +244,6 @@
     box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
 
 }
-
-.model-form input[type="checkbox"]{
-    width: 50%;
-}
-
 
 .model-form .nomor{
     font: normal 20px 'Bitter', serif;
@@ -461,7 +469,7 @@ th {
 }
 #a1{
     position: fixed;
-    width: 80%;
+    width: 95%;
     height: auto;
     background-color: white;
     border-color: #63c9f0;
@@ -471,7 +479,7 @@ th {
 }
 #a2{
     position: fixed;
-    width: 80%;
+    width: 95%;
     height: auto;
     background-color: white;
     border-color: #63c9f0;
@@ -485,7 +493,7 @@ th {
 }
 #a3{
     position: fixed;
-    width: 80%;
+    width: 95%;
     height: auto;
     background-color: white;
     border-color: #63c9f0;
@@ -494,7 +502,7 @@ th {
 }
 #a4{
     position: fixed;
-    width: 80%;
+    width: 95%;
     height: auto;
     background-color: white;
     border-color: #63c9f0;
@@ -513,9 +521,24 @@ th {
     margin-right: 10%;
 
 }
+.kotakabu {
+    width: auto;
+    height:auto;
+    background: #f2f2f2;
+    padding: 20px 20px;
+    position:  static;
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    border: 1px solid #E7E7E8;
+    margin-top: 10px;
+    margin-left: 25%;
+
+}
 
 /*--------------- ----------------------------------IMG --------------------------------------------------------------------------------*/
-
+.cek{
+    width: 10%;
+    float: left;
+  }
 .img-bulat {
     width: 400px;
     height: 100px;
@@ -548,17 +571,30 @@ th {
 
 nav {
     width: 100%;
-    text-align: center;
-    background: #030402;
-    border: 3px #FFFFFF;
-    top: 0%;
-    left: 0%;
-    position: relative;
+    background:transparent;
+    float: right;
+}
+.garis{
+    width: 100%;
+    background: #b6f06f;
+
 }
 .menu{
     border: 3px #FFFFFF;
 }
+.label-menu{
+    color: #57b6f0;
+    float: left;
+    position: absolute;
+    margin: 2% 5% 10% 8%;
+}
 
+.label-menu-dua{
+    position: absolute;
+    color: #57b6f0;
+    margin: 4% 10% 10% 1%;
+    font-size: 100%;
+}
 
 nav ul {
     padding: 1px;
@@ -566,6 +602,7 @@ nav ul {
     background: transparent;
     list-style: none;
     position: relative;
+    margin: 3% -1% -1% 10%;
     display: inline-table;
 }
 
@@ -576,8 +613,8 @@ nav ul li {
 
 nav ul li:hover {
 
-    color: #FFFFFF;
-    border-bottom-color:  #57b6f0;
+    color: #c9c5bf;
+    border-bottom: 3px solid #57b6f0;
 }
 
 nav ul li a {
@@ -585,7 +622,7 @@ nav ul li a {
     color: #35b4da; text-decoration: none;
 }
 nav ul li:hover a {
-    color: #FFFFFF;
+    color: #c9c5bf;
     border-bottom: #FFFFFF;
 }
 
@@ -593,6 +630,7 @@ nav img{
     float: left;
     width: 7%;
     height:12%;
+    margin-top: 1%;
     position: relative;
 }
 
@@ -617,6 +655,17 @@ nav label{
     -moz-transform : scale(2,2);
     -o-transform : scale(2,2);
     transform : scale(1.5,1.5);
+}
+
+/*menubar*/
+
+h3{
+    color: #FFFFFF;
+    float: left;
+}
+.dua{
+    margin: 5%
+    float: left;
 }
 
 

@@ -11,16 +11,19 @@
 </head>
 <body>
 <!--navigasi-->
+<div>
 <nav>
     <img src="../img/logo.png">
-    <span> <label>BANGKU</label><br>
-    <label class="dua">Sumbang Buku</label></span>
+    <span> <h1 class="label-menu">BANGKU</label></h1>
+    <label class="label-menu-dua">Sumbang Buku</label></span>
     <ul>
         <li><a href="beranda_umum.php">Beranda</a> </li>
         <li><a href="profilumum.php"> Profil </a></li>
         <li><a href="../index.php">Logout</a></li>
     </ul>
 </nav>
+</div>
+
 <!--    <div class="tab-gaya">-->
 <!--        <div class="kotak">-->
 <!--            <button id="" onclick="">beranda</button>-->
@@ -38,6 +41,7 @@
 
 
         <div id="a2" class="kotak" style="margin-top: 0%;" >
+            <h1 class="model-h1-menu">Penyumbangan Buku</h1>
             <?php
                 $sumbangan = $kon->query("select donasi.tanggal, user.nama, donasi.jumlah, donasi.id_donasi from donasi, user WHERE donasi.user_id_penerima = user.id_user and donasi.status_buku=2");
 
@@ -69,24 +73,48 @@
 <div class="kotak" id="a1" style="margin-top: 0%;">
 
     <div>
-        <div>Tambah Buku</div>
-        <div class="alert">
-            <?php
+        <h1 class="model-h1-menu">Tambah Buku</h1>
+        <div class="kotakabu" style="width: 50%">
+             <?php
             if($_SESSION['pesan']!=""){
-                echo $_SESSION['pesan'];
+                echo "<div class='alert'>".$_SESSION['pesan']."</div>";
             }
             ?>
-        </div>
-        <form action="../fungsi/proses.php" method="post">
-            <label for="tambah">Jumlah Buku</label>
-            <input type="text" name="jbuku"><br>
-            <label for="kategori">Katagori</label>
-            <input type="checkbox" name="kat[]" value="fiksi">Fiksi
-            <input type="checkbox" name="kat[]" value="nonf">Non Fiksi<br>
-            <input type="submit" value="Sumbang" name="sumbang">
-        </form>
-    </div>
 
+        <form action="../fungsi/proses.php" method="post">
+            <table width="100%">
+                <tr>
+                    <td >
+                        <label for="tambah">Jumlah Buku</label>
+                    </td>
+                    <td colspan="2" width="100%">
+                        <input type="text" name="jbuku" style="width: 10%"><br>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <label for="kategori">Katagori</label>
+                    </td >
+                    <td width="40%">
+                        <div><input type="checkbox" name="kat[]" value="fiksi" class="cek">Fiksi</div>
+                    </td>
+                    <td width="40%">
+                        <span><input type="checkbox" name="kat[]" value="nonf" class="cek">Non Fiksi<br></span>
+                    </td>
+
+                </tr>
+
+
+            </table>
+            <input type="submit" value="Sumbang" name="sumbang" class="bt bt-birusoft-tmbh">
+        </div>
+        </form>
+
+    </div>
+<div class="kotak">
+
+</div>
     <div>
         <!--                tampilkan list donasi user yang belum di ambil-->
         <?php
@@ -94,7 +122,8 @@
         $donasi = $kon->query("SELECT id_donasi, jumlah, kategori FROM donasi WHERE user_id_pemilik=$id and status_buku=0");
         $no = 1;
         ?>
-        <table>
+        <div class="tabel">
+            <table class="tabel tabel-garis">
             <th>No</th>
             <th>Jumlah</th>
             <th>Kategori</th>
@@ -113,11 +142,14 @@
             }
             ?>
         </table>
+        </div>
     </div>
 </div>
 
 <div id="a3" class="kotak" style="margin-top: 0%;" >
+    <h1 class="model-h1-menu">Cari Penyumbang Buku </h1>
     <!--akhir fitur cari sementara disini-->
+
         <?php
         $sql= "select * from user where jenis_user=2";
         $query= mysqli_query($kon, $sql);

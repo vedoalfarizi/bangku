@@ -1,4 +1,4 @@
-<?php
+    <?php
 session_start();
 $_SESSION['pesan'];
 include "../fungsi/koneksi.php";
@@ -12,7 +12,7 @@ include "../fungsi/koneksi.php";
 <!--navigasi-->
 <nav>
 <img src="../img/logo.png">
-    <span><label class="dua"><h3>BANGKU</h3>Sumbang Buku</label><br></span>
+    <span><h3>BANGKU</h3><label class="dua">Sumbang Buku</label><br></span>
     <ul>
         <li><a href="../org/beranda.php">Beranda</a> </li>
         <li><a href="profilorg.php"> Profil </a></li>
