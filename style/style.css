@@ -491,7 +491,7 @@ nav {
     background: #030402;
     border: 3px #FFFFFF;
 
-    position: fixed;
+    position: relative;
 }
 .menu{
     border: 3px #FFFFFF;
