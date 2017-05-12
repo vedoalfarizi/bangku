@@ -138,3 +138,15 @@ function empat() {
 }
 
 //------------------------------------------------------
+function cpas() {
+    var cpas = document.getElementById('cpass');
+    var dpas = document.getElementById('dpass');
+    if(cpas.value != dpas.value){
+        cpas.style.borderColor = 'red';
+        cpas.style.backgroundColor = '#f0cad1';
+    }else{
+        cpas.style.borderColor = '#15ff28';
+        cpas.style.backgroundColor = '#b2f0ab';
+    }
+
+}
