@@ -10,7 +10,18 @@ include "../fungsi/koneksi.php";
     <link rel="stylesheet" type="text/css" href="../style/style.css">
 </head>
 <body>
-
+<div>
+    <nav>
+        <img src="../img/logo.png">
+        <span> <h1 class="label-menu">BANGKU</label></h1>
+    <label class="label-menu-dua">Sumbang Buku</label></span>
+        <ul>
+            <li><a href="beranda_umum.php">Beranda</a> </li>
+            <li><a href="profilumum.php"> Profil </a></li>
+            <li><a href="../index.php">Logout</a></li>
+        </ul>
+    </nav>
+</div>
 <!-- ------------------------------------------ profil -------------------------------------------------------------------------- -->
 <?php
 $ddd = $_SESSION['id'];
