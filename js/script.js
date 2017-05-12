@@ -102,3 +102,17 @@ function tiga() {
     bt43.style.borderColor = '#63c9f0';
 }
 //------------------------------------------------------
+
+function cekone() {
+    var cpas = document.getElementById('cpass');
+    var dpas = document.getElementById('dpass');
+    // alert("mamamama");
+    if(cpas.value != dpas.value){
+        cpas.style.borderColor = 'red';
+        cpas.style.backgroundColor = '#f0cad1';
+    }else{
+        cpas.style.borderColor = 'green';
+        cpas.style.backgroundColor = '#caf0d6';
+    }
+
+}
