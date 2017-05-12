@@ -52,6 +52,10 @@
     border: 3px solid #d9d9d9;
     border-radius: 3rem;
     padding: 3%;
+    -webkit-transition: all 1s ease 30ms;
+    -moz-transition: all 1s ease 30ms;
+    -o-transition: all 1s ease 30ms;
+    transition: all 1s ease 30ms;
 }
 
 .bt-birusoft.focus
@@ -61,9 +65,12 @@
     border-color:#63c9f0;
 }
 .bt-birusoft:hover{
-    color:#fff;
-    background-color:#35b4da;
-    border-color:#35b4da;
+    color: white;
+    background: #b6f06f;
+    -webkit-transform : scale(1,1);
+    -moz-transform : scale(2,2);
+    -o-transform : scale(2,2);
+    transform : scale(1.2,1.2);
 }
 .bt-hijau{
     color:#fff;
@@ -594,11 +601,22 @@ nav label{
     color: #FFFFFF;
 }
 
+/*animasi*/
 
-
-
-
-
+.animasi{
+    -webkit-transition: all 1s ease 30ms;
+    -moz-transition: all 1s ease 30ms;
+    -o-transition: all 1s ease 30ms;
+    transition: all 1s ease 30ms;
+}
+/*membuat animasi hover*/
+.sorot:hover{
+    color: white;
+     -webkit-transform : scale(1,1);
+    -moz-transform : scale(2,2);
+    -o-transform : scale(2,2);
+    transform : scale(1.5,1.5);
+}
 
 
 
