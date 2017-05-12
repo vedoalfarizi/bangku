@@ -5,28 +5,24 @@
 </head>
 <body>
 <!--navigasi-->
-<nav class="menu">
-
-    <!-- Item 1 -->
-    <a href="../org/beranda.php">
-        <label for="slide-item-2"><span>Beranda</span></label>
-    </a>
-
-    <a href="profilorg.php">
-        <label for="slide-item-2"><span>Profil</span></label>
-    </a>
-    <a href="../index.php">
-        <label for="slide-item-2"><span>LogOut</span></label>
-    </a>
-
-    </nav>
+<nav>
+<img src="../img/logo.png">
+   <span> <label>BANGKU</label><br>
+    <label class="dua">Sumbang Buku</label></span>
+    <ul>
+        <li><a href="../org/beranda.php">Beranda</a> </li>
+        <li><a href="profilorg.php"> Profil </a></li>
+        <li><a href="../index.php">Logout</a></li>
+    </ul>
+</nav>
+<div class="kotak"></div>
 <!-- ------------------------------------------ profil -------------------------------------------------------------------------- -->
 
     <div>
         <div class="model-form ">
             <h1 class="model-form profil" >TANAH OMBAK</h1>
             <div align="center">
-                <img src="../img/Pallet.png" class="imgprofil">
+                <img src="../img/Default%20Lembaga.png" class="imgprofil">
             </div>
 
             <label>Deskripsi</label>
