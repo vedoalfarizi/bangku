@@ -337,6 +337,7 @@ th {
     height: 50px;
     background-color: blue;
     margin: 200px;
+    display: none;
 }
 #a3{
     position: fixed;
