@@ -236,4 +236,82 @@ if(isset($_POST['updatebioumum'])){
     }
 }
 
+if(isset($_POST["verifikasi_ktp"])){
+    $target_dir = "../img/ktp/";
+    $idlah = $_SESSION["id"];
+    $target_file = $target_dir.basename($_FILES["ktp"]["name"]);
+    $filename = basename($_FILES["ktp"]["name"]);
+    $uploadOk = 1;
+
+    if($filename!=""){
+        $ps = $kon->prepare("update user set foto_ktp = ? where id_user = ?");
+        $ps->bind_param("si",$target_file, $idlah);
+        $ps->execute();
+
+        if ($_FILES["ktp"]["size"] > 5000000 ) {
+            $_SESSION['pesan'] = "Ukuran file terlalu besar";
+            header('location:../org/profilorg.php');
+            $uploadOk = 0;
+        }
+
+        if ($uploadOk == 0) {
+            echo "<script>alert('gagal mengupload file')</script>";
+            header('location:../org/profilorg.php');
+        } else {
+            if (move_uploaded_file($_FILES["ktp"]["tmp_name"], $target_file)) {
+                $uid = $_SESSION['id'];
+                $status = $kon->query("UPDATE user SET status_user=1 WHERE id_user='$uid'");
+                $_SESSION['status']=1;
+                $_SESSION['pesan'] = "Berhasil mengubah foto";
+                header('location:../org/profilorg.php');
+            } else {
+                echo "<script>alert('terjadi kesalahan saat meupload')</script>";
+            }
+        }
+    }else{
+        $_SESSION['pesan'] = "Maaf, anda belum memilih file foto";
+        header('location:../org/profilorg.php');
+    }
+
+}
+
+if(isset($_POST["verifikasi_logo"])){
+    $target_dir = "../img/";
+    $idlah = $_SESSION["id"];
+    $target_file = $target_dir.basename($_FILES["logo"]["name"]);
+    $filename = basename($_FILES["logo"]["name"]);
+    $uploadOk = 1;
+
+    if($filename!=""){
+        $ps = $kon->prepare("update user set foto_ktp = ? where id_user = ?");
+        $ps->bind_param("si",$target_file, $idlah);
+        $ps->execute();
+
+        if ($_FILES["logo"]["size"] > 5000000 ) {
+            $_SESSION['pesan'] = "Ukuran file terlalu besar";
+            header('location:../org/profilorg.php');
+            $uploadOk = 0;
+        }
+
+        if ($uploadOk == 0) {
+            echo "<script>alert('gagal mengupload file')</script>";
+            header('location:../org/profilorg.php');
+        } else {
+            if (move_uploaded_file($_FILES["logo"]["tmp_name"], $target_file)) {
+                $uid = $_SESSION['id'];
+                $status = $kon->query("UPDATE user SET status_user=1 WHERE id_user='$uid'");
+                $_SESSION['status']=1;
+                $_SESSION['pesan'] = "Berhasil mengubah foto";
+                header('location:../org/profilorg.php');
+            } else {
+                echo "<script>alert('terjadi kesalahan saat meupload')</script>";
+            }
+        }
+    }else{
+        $_SESSION['pesan'] = "Maaf, anda belum memilih file foto";
+        header('location:../org/profilorg.php');
+    }
+
+}
+
 ?>
