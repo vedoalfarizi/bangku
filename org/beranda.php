@@ -40,7 +40,8 @@ if(!isset($_SESSION['id'])){
     <!--Awal Penerimaan-->
     <?php
 
-    $quer = "select donasi.tanggal, donasi.user_id_pemilik,donasi.jumlah from donasi, user WHERE donasi.user_id_pemilik = user.id_user AND user.jenis_user = 2";
+    $quer = "select donasi.tanggal, user.nama, donasi.jumlah, donasi.id_donasi from donasi, user WHERE 
+    donasi.user_id_pemilik = user.id_user AND donasi.status_buku=2";
 
     $sel = $kon->query($quer);
     echo "
@@ -59,10 +60,10 @@ if(!isset($_SESSION['id'])){
         echo "<tr>";
         echo "<td>".$no."</td>";
         echo "<td>".$del['tanggal']."</td>";
-        echo "<td>".$del['user_id_pemilik']."</td>";
+        echo "<td>".$del['nama']."</td>";
         echo "<td>".$del['jumlah']."</td>";
-        echo "<td><a href=''>detail</a></td>";
-        echo "<td><a href=''>terima</a>&nbsp;<a href=''>batal</a></td>";
+        echo "<td><a href='detail_penerimaan.php?idd=".$del['id_donasi']."' target='_blank'>detail</a></td>";
+        echo "<td><a href='terima.php?idd=".$del['id_donasi']."'>terima</a>&nbsp;<a href='batal.php?idd=".$del['id_donasi']."'>batal</a></td>";
         echo "</tr>";
         $no++;
     }
@@ -103,6 +104,7 @@ if(!isset($_SESSION['id'])){
     </div>
 
     <?php
+    $id = $_SESSION['id'];
     $tampil = $kon->query("SELECT id_kegiatan, nama_kegiatan, deskripsi, alamat, tanggal FROM kegiatan WHERE user_id='$id' ORDER BY tanggal ASC");
     $no = 1;
     ?>
@@ -207,7 +209,53 @@ if(!isset($_SESSION['id'])){
 </div>
 
 <div id="a4" class="kotak" style="margin-top: 0%;">
+    <div class="tabel">
+        <table class="tabel tabel-garis">
+            <th>No</th>
+            <th>Organisasi</th>
+            <th>Kegiatan</th>
+            <th>Kategori</th>
+            <th>Kota</th>
+            <th>Lihat</th>
 
+            <?php
+            date_default_timezone_set("Asia/Jakarta");
+            $tgl = date('Y-m-d');
+
+            $datetime = new DateTime($tgl);
+            $ketemu=false;
+            while($ketemu==false){
+                $basis_tgl = $datetime->format('Y-m-d');
+                $day = (date('D', strtotime($basis_tgl)));
+                if($day!='Mon'){
+                    $datetime->modify('-1 day');
+                }else{
+                    $ketemu=true;
+                }
+            }
+            $datetime2 = new DateTime($basis_tgl);
+            $datetime2->modify('+6 day');
+
+            $donasi = $kon->query("SELECT user.nama, donasi.kategori, donasi.jumlah, user.kota, donasi.id_donasi 
+            FROM donasi, user WHERE donasi.user_id_pemilik=user.id_user ORDER BY donasi.jumlah DESC");
+            $no = 1;
+            while($hasil = $donasi->fetch_assoc()){
+                echo "
+                            <tr>
+                                <td>$no</td>
+                                <td>" . $hasil['nama'] . "</td>
+                                <td>" . $hasil['kategori'] . "</td>
+                                <td>" . $hasil['jumlah'] . "</td>
+                                <td>" . $hasil['kota'] . "</td>
+                                <td><a href='beranda.php?idd=" . $hasil['id_donasi'] . "'>Lihat</a></td>
+                            </tr>
+                            ";
+                $no++;
+            }
+            ?>
+
+        </table>
+    </div>
 </div>
 <!--Akhir Menu Navigasi-->
 
