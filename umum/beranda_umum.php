@@ -187,7 +187,7 @@
                     $query= mysqli_query($kon, $sql);
                     while ($row = mysqli_fetch_assoc($query)) {
                     ?>
-                    <tr><a class="ambilbtn" style="color: rgb(0, 0, 238); cursor: pointer; text-decoration: underline;" > <b><?php echo $row['nama'] ?></b></a></tr>
+                    <tr><a class="ambilbtn" href="cari.php?id=".."" style="color: rgb(0, 0, 238); cursor: pointer; text-decoration: underline;" ><b><?php echo $row['nama']?></b></a></tr>
                 </td> <br>
                 <tr><?php echo $row['alamat'] ?> </tr>  <br>
                 <tr><?php echo $row['no_hp'] ?> </tr>   <br>
